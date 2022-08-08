@@ -1,0 +1,396 @@
+import sys 
+from tqdm import tqdm
+import math
+import random
+from pathlib import Path
+import os
+import pandas as pd
+import numpy as np
+from sklearn.preprocessing import LabelEncoder
+import cv2
+import albumentations
+from albumentations.pytorch.transforms import ToTensorV2
+import torch
+import timm
+import torch
+import torch.nn as nn
+from torch.nn import Parameter
+from torch.nn import functional as F
+from torch.utils.data import Dataset,DataLoader
+from torch.optim import Adam
+from torch.optim.lr_scheduler import CosineAnnealingWarmRestarts, CosineAnnealingLR, ReduceLROnPlateau
+from torch.optim import Adam, lr_scheduler
+from torch.optim.lr_scheduler import _LRScheduler
+from sklearn.metrics.pairwise import cosine_similarity
+
+ROOT_DIRECTORY = Path("/code_execution")
+#ROOT_DIRECTORY = Path("./")
+PREDICTION_FILE = ROOT_DIRECTORY / "submission" / "submission.csv"
+DATA_DIRECTORY = ROOT_DIRECTORY / "data"
+
+class CFG:
+    DIM = (512,512)
+    NUM_WORKERS = 0
+    TRAIN_BATCH_SIZE = 8
+    VALID_BATCH_SIZE = 8
+    EPOCHS = 20
+    SEED = 42
+    device = torch.device('cuda')
+    model_name = 'tf_efficientnet_b2_ns'
+    loss_module = 'arcface' #'cosface' #'adacos'
+    s = 30.0
+    m = 0.5 
+    ls_eps = 0.0
+    easy_margin = False
+    scheduler_params = {
+          "lr_start": 1e-5,
+          "lr_max": 5e-4 ,
+          "lr_min": 5e-6,
+          "lr_ramp_ep": 15,
+          "lr_sus_ep": 0,
+          "lr_decay": 0.8,
+      }
+    model_params = {
+      'n_classes':788,
+      'model_name':'tf_efficientnet_b5_ns',
+      'use_fc':False,
+      'fc_dim':2048,
+      'dropout':0.0,
+      'loss_module':loss_module,
+      's':30.0,
+      'margin':0.50,
+      'ls_eps':0.0,
+      'theta_zero':0.785,
+      'pretrained':False
+    }
+
+
+def get_valid_transforms():
+
+    return albumentations.Compose(
+        [
+            albumentations.Resize(CFG.DIM[0],CFG.DIM[1],always_apply=True),
+            albumentations.Normalize(),
+        ToTensorV2(p=1.0)
+        ]
+    )
+
+class GeM(nn.Module):
+    def __init__(self, p=3, eps=1e-6):
+        super(GeM, self).__init__()
+        self.p = nn.Parameter(torch.ones(1)*p)
+        self.eps = eps
+
+    def forward(self, x):
+        return self.gem(x, p=self.p, eps=self.eps)
+        
+    def gem(self, x, p=3, eps=1e-6):
+        return F.avg_pool2d(x.clamp(min=eps).pow(p), (x.size(-2), x.size(-1))).pow(1./p)
+        
+    def __repr__(self):
+        return self.__class__.__name__ + \
+                '(' + 'p=' + '{:.4f}'.format(self.p.data.tolist()[0]) + \
+                ', ' + 'eps=' + str(self.eps) + ')'
+
+class WhaleDataset_testing(Dataset):
+    def __init__(self, csv, transforms=None):
+
+        self.csv = csv
+        self.augmentations = transforms
+
+    def __len__(self):
+        return self.csv.shape[0]
+
+    def __getitem__(self, index):
+        row = self.csv.iloc[index]
+        
+        image = cv2.imread('data/' + row.path)
+        image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        
+        if self.augmentations:
+            augmented = self.augmentations(image=image)
+            image = augmented['image']       
+        
+        
+        return {"image_id": self.csv.index[index], "image": image}
+
+    
+
+def l2_norm(input, axis = 1):
+    norm = torch.norm(input, 2, axis, True)
+    output = torch.div(input, norm)
+
+    return output
+class ElasticArcFace(nn.Module):
+    def __init__(self, in_features, out_features, s=64.0, m=0.50,std=0.0125,plus=False):
+        super(ElasticArcFace, self).__init__()
+        self.in_features = in_features
+        self.out_features = out_features
+        self.s = s
+        self.m = m
+        self.kernel = nn.Parameter(torch.FloatTensor(in_features, out_features))
+        nn.init.normal_(self.kernel, std=0.01)
+        self.std=std
+        self.plus=plus
+    def forward(self, embbedings, label):
+        embbedings = l2_norm(embbedings, axis=1)
+        kernel_norm = l2_norm(self.kernel, axis=0)
+        cos_theta = torch.mm(embbedings, kernel_norm)
+        cos_theta = cos_theta.clamp(-1, 1)  # for numerical stability
+        index = torch.where(label != -1)[0]
+        m_hot = torch.zeros(index.size()[0], cos_theta.size()[1], device=cos_theta.device)
+        margin = torch.normal(mean=self.m, std=self.std, size=label[index, None].size(), device=cos_theta.device) # Fast converge .clamp(self.m-self.std, self.m+self.std)
+        if self.plus:
+            with torch.no_grad():
+                distmat = cos_theta[index, label.view(-1)].detach().clone()
+                _, idicate_cosie = torch.sort(distmat, dim=0, descending=True)
+                margin, _ = torch.sort(margin, dim=0)
+            m_hot.scatter_(1, label[index, None], margin[idicate_cosie])
+        else:
+            m_hot.scatter_(1, label[index, None], margin)
+        cos_theta.acos_()
+        cos_theta[index] += m_hot
+        cos_theta.cos_().mul_(self.s)
+        return cos_theta
+    
+class ArcMarginProduct(nn.Module):
+    r"""Implement of large margin arc distance: :
+        Args:
+            in_features: size of each input sample
+            out_features: size of each output sample
+            s: norm of input feature
+            m: margin
+            cos(theta + m)
+        """
+    def __init__(self, in_features, out_features, s=30.0, m=0.50, easy_margin=False, ls_eps=0.0):
+        super(ArcMarginProduct, self).__init__()
+        self.in_features = in_features
+        self.out_features = out_features
+        self.s = s
+        self.m = m
+        self.ls_eps = ls_eps  # label smoothing
+        self.weight = Parameter(torch.FloatTensor(out_features, in_features))
+        nn.init.xavier_uniform_(self.weight)
+
+        self.easy_margin = easy_margin
+        self.cos_m = math.cos(m)
+        self.sin_m = math.sin(m)
+        self.th = math.cos(math.pi - m)
+        self.mm = math.sin(math.pi - m) * m
+
+    def forward(self, input, label):
+        # --------------------------- cos(theta) & phi(theta) ---------------------------
+        cosine = F.linear(F.normalize(input), F.normalize(self.weight))
+        sine = torch.sqrt(1.0 - torch.pow(cosine, 2))
+        phi = cosine * self.cos_m - sine * self.sin_m
+        if self.easy_margin:
+            phi = torch.where(cosine > 0, phi, cosine)
+        else:
+            phi = torch.where(cosine > self.th, phi, cosine - self.mm)
+        # --------------------------- convert label to one-hot ---------------------------
+        # one_hot = torch.zeros(cosine.size(), requires_grad=True, device='cuda')
+        one_hot = torch.zeros(cosine.size(), device='cuda')
+        one_hot.scatter_(1, label.view(-1, 1).long(), 1)
+        if self.ls_eps > 0:
+            one_hot = (1 - self.ls_eps) * one_hot + self.ls_eps / self.out_features
+        # -------------torch.where(out_i = {x_i if condition_i else y_i) -------------
+        output = (one_hot * phi) + ((1.0 - one_hot) * cosine)
+        output *= self.s
+
+        return output
+
+class WhaleNet_testing(nn.Module):
+
+    def __init__(self,
+                 n_classes,
+                 model_name='efficientnet_b0',
+                 use_fc=False,
+                 fc_dim=512,
+                 dropout=0.0,
+                 loss_module='softmax',
+                 s=30.0,
+                 margin=0.50,
+                 ls_eps=0.0,
+                 theta_zero=0.785,
+                 pretrained=False):
+        """
+        :param n_classes:
+        :param model_name: name of model from pretrainedmodels
+            e.g. resnet50, resnext101_32x4d, pnasnet5large
+        :param pooling: One of ('SPoC', 'MAC', 'RMAC', 'GeM', 'Rpool', 'Flatten', 'CompactBilinearPooling')
+        :param loss_module: One of ('arcface', 'cosface', 'softmax')
+        """
+        super(WhaleNet_testing, self).__init__()
+        print('Building Model Backbone for {} model'.format(model_name))
+
+        self.backbone = timm.create_model(model_name, pretrained=pretrained)
+        final_in_features = self.backbone.classifier.in_features
+        
+        self.backbone.classifier = nn.Identity()
+        self.backbone.global_pool = nn.Identity()
+        
+        self.pooling =  GeM()#nn.AdaptiveAvgPool2d(1)
+        self.bn = nn.BatchNorm1d(6144)
+        self.ln = nn.Linear(6144, final_in_features)
+        self.use_fc = use_fc
+        if use_fc:
+            self.dropout = nn.Dropout(p=dropout)
+            self.fc = nn.Linear(final_in_features, fc_dim)
+            self.bn = nn.BatchNorm1d(fc_dim)
+            self._init_params()
+            final_in_features = fc_dim
+
+        self.loss_module = loss_module
+        if loss_module == 'arcface':
+            self.final = ElasticArcFace(final_in_features, n_classes,
+                                          s=s, m=margin)#, easy_margin=False, ls_eps=ls_eps)
+        elif loss_module == 'cosface':
+            self.final = AddMarginProduct(final_in_features, n_classes, s=s, m=margin)
+        elif loss_module == 'adacos':
+            self.final = AdaCos(final_in_features, n_classes, m=margin, theta_zero=theta_zero)
+        else:
+            self.final = nn.Linear(final_in_features, n_classes)
+
+    def _init_params(self):
+        nn.init.xavier_normal_(self.fc.weight)
+        nn.init.constant_(self.fc.bias, 0)
+        nn.init.constant_(self.bn.weight, 1)
+        nn.init.constant_(self.bn.bias, 0)
+
+    def forward(self, x):
+        feature = self.extract_feat(x)
+        return feature
+
+    def extract_feat(self, x):
+        batch_size = x.shape[0]
+        x = self.backbone(x)
+        x1 = self.backbone.blocks[2]
+        x2 = self.backbone.blocks[4]
+        x1 = self.pooling(x).view(batch_size, -1)
+        x2 = self.pooling(x).view(batch_size, -1)
+        x3 = self.pooling(x).view(batch_size, -1)
+        x = torch.cat((x1, x2, x3), dim=1)
+        x = self.bn(x)
+        x = self.ln(x)
+        if self.use_fc:
+            x = self.dropout(x)
+            x = self.fc(x)
+            x = self.bn(x)
+
+        return x
+
+    
+    
+model1 = WhaleNet_testing(**CFG.model_params)
+state1 = torch.load("model_tf_efficientnet_b5_ns_IMG_SIZE_512_arcface_f2_6-76.bin",map_location=torch.device(CFG.device))
+model1.load_state_dict(state1)
+model1.to(CFG.device)
+
+model2 = WhaleNet_testing(**CFG.model_params)
+state2 = torch.load("model_tf_efficientnet_b5_ns_IMG_SIZE_512_arcface_f0_7-16.bin",map_location=torch.device(CFG.device))
+model2.load_state_dict(state2)
+model2.to(CFG.device)
+
+model3 = WhaleNet_testing(**CFG.model_params)
+state3 = torch.load("model_tf_efficientnet_b5_ns_IMG_SIZE_512_arcface_f4_7-07.bin",map_location=torch.device(CFG.device))
+model3.load_state_dict(state3)
+model3.to(CFG.device)
+
+model4 = WhaleNet_testing(**CFG.model_params)
+state4 = torch.load("model_tf_efficientnet_b5_ns_IMG_SIZE_512_arcface_literal_f2_3-09.bin",map_location=torch.device(CFG.device))
+model4.load_state_dict(state4)
+model4.to(CFG.device)
+
+
+#logger.info("Starting main script")
+# load test set data and pretrained model
+query_scenarios = pd.read_csv(DATA_DIRECTORY / "query_scenarios.csv", index_col="scenario_id")
+metadata = pd.read_csv(DATA_DIRECTORY / "metadata.csv", index_col="image_id")
+#logger.info("Loading pre-trained model")
+
+# we'll only precompute embeddings for the images in the scenario files (rather than all images), so that the
+# benchmark example can run quickly when doing local testing. this subsetting step is not necessary for an actual
+# code submission since all the images in the test environment metadata also belong to a query or database.
+scenario_imgs = []
+for row in query_scenarios.itertuples():
+    scenario_imgs.extend(pd.read_csv(DATA_DIRECTORY / row.queries_path).query_image_id.values)
+    scenario_imgs.extend(pd.read_csv(DATA_DIRECTORY / row.database_path).database_image_id.values)
+scenario_imgs = sorted(set(scenario_imgs))
+metadata = metadata.loc[scenario_imgs]
+
+# instantiate dataset/loader and generate embeddings for all images
+test_dataset = WhaleDataset_testing(metadata, transforms=get_valid_transforms())
+dataloader = torch.utils.data.DataLoader(
+    test_dataset,
+    batch_size=1,
+    num_workers=CFG.NUM_WORKERS,
+    shuffle=False,
+    pin_memory=True,
+    drop_last=False,
+)
+embeddings = []
+embeddings2 = []
+model1.eval()
+model2.eval()
+model3.eval()
+model4.eval()
+
+#logger.info("Precomputing embeddings")
+for batch in tqdm(dataloader, total=len(dataloader)):
+    batch_embeddings1 = model1(batch["image"].to(CFG.device))
+    batch_embeddings2 = model2(batch["image"].to(CFG.device))
+    batch_embeddings3 = model3(batch["image"].to(CFG.device))
+    batch_embeddings4 = model4(batch["image"].to(CFG.device))
+    
+    
+    batch_embeddings1 = batch_embeddings1.detach().cpu().numpy()
+    batch_embeddings2 = batch_embeddings2.detach().cpu().numpy()
+    batch_embeddings3 = batch_embeddings3.detach().cpu().numpy()
+    batch_embeddings4 = batch_embeddings4.detach().cpu().numpy()
+    
+    batch_embeddings = np.concatenate((batch_embeddings1, batch_embeddings2, batch_embeddings3), 1)
+    batch_embeddings_df = pd.DataFrame(batch_embeddings, index=batch["image_id"])
+    batch_embeddings_df2 = pd.DataFrame(batch_embeddings4, index=batch["image_id"])
+    embeddings.append(batch_embeddings_df)
+    embeddings2.append(batch_embeddings_df2)
+
+embeddings = pd.concat(embeddings)
+embeddings2 = pd.concat(embeddings2)
+#logger.info(f"Precomputed embeddings for {len(embeddings)} images")
+
+#logger.info("Generating image rankings")
+# process all scenarios
+results = []
+for row in query_scenarios.itertuples():
+    # load query df and database images; subset embeddings to this scenario's database
+    qry_df = pd.read_csv(DATA_DIRECTORY / row.queries_path)
+    db_img_ids = pd.read_csv(DATA_DIRECTORY / row.database_path).database_image_id.values
+    qr_img_ids = qry_df.query_image_id.values
+    
+    metd = metadata.loc[db_img_ids]
+    qrmetd = metadata.loc[qr_img_ids]
+    if all(i == "top" for i in metd["viewpoint"].values) and all(i == "top" for i in qrmetd["viewpoint"].values):
+        embeddings = embeddings
+    else:
+        embeddings = embeddings2
+    db_embeddings = embeddings.loc[db_img_ids]
+    # predict matches for each query in this scenario
+    for qry in qry_df.itertuples():
+        # get embeddings; drop query from database, if it exists
+        qry_embedding = embeddings.loc[[qry.query_image_id]]
+        _db_embeddings = db_embeddings.drop(qry.query_image_id, errors='ignore')
+
+        # compute cosine similarities and get top 20
+        sims = cosine_similarity(qry_embedding, _db_embeddings)[0]
+        sims[sims < 0 ] = 0
+        sims[sims > 1 ] = 1
+        top20 = pd.Series(sims, index=_db_embeddings.index).sort_values(0, ascending=False).head(20)
+        # append result
+        qry_result = pd.DataFrame(
+            {"query_id": qry.query_id, "database_image_id": top20.index, "score": top20.values}
+        )
+        results.append(qry_result)
+
+#logger.info(f"Writing predictions file to {PREDICTION_FILE}")
+submission = pd.concat(results)
+submission.to_csv(PREDICTION_FILE, index=False)

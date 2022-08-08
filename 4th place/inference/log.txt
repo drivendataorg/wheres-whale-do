@@ -1,0 +1,446 @@
++ exit_code=0
++ tee /code_execution/submission/log.txt
++ cd /code_execution
++ echo 'List installed packages'
+List installed packages
++ echo '######################################'
+######################################
++ conda list -n condaenv
+# packages in environment at /srv/conda/envs/condaenv:
+#
+# Name                    Version                   Build  Channel
+_libgcc_mutex             0.1                 conda_forge    conda-forge
+_openmp_mutex             4.5                  2_kmp_llvm    conda-forge
+absl-py                   0.15.0                   pypi_0    pypi
+addict                    2.4.0                    pypi_0    pypi
+aiohttp                   3.8.1            py39hb9d737c_1    conda-forge
+aiosignal                 1.2.0              pyhd8ed1ab_0    conda-forge
+albumentations            1.0.3              pyhd8ed1ab_0    conda-forge
+alsa-lib                  1.2.3.2              h166bdaf_0    conda-forge
+antlr4-python3-runtime    4.9.3                    pypi_0    pypi
+aom                       3.3.0                h27087fc_1    conda-forge
+appdirs                   1.4.4              pyh9f0ad1d_0    conda-forge
+astunparse                1.6.3                    pypi_0    pypi
+async-timeout             4.0.2              pyhd8ed1ab_0    conda-forge
+attrs                     21.4.0             pyhd8ed1ab_0    conda-forge
+blinker                   1.4                        py_1    conda-forge
+blosc                     1.21.1               h83bc5f7_3    conda-forge
+brotli                    1.0.9                h166bdaf_7    conda-forge
+brotli-bin                1.0.9                h166bdaf_7    conda-forge
+brotlipy                  0.7.0           py39hb9d737c_1004    conda-forge
+brunsli                   0.1                  h9c3ff4c_0    conda-forge
+bzip2                     1.0.8                h7f98852_4    conda-forge
+c-ares                    1.18.1               h7f98852_0    conda-forge
+c-blosc2                  2.1.1                h7a311fb_2    conda-forge
+ca-certificates           2022.6.15            ha878542_0    conda-forge
+cachetools                5.0.0              pyhd8ed1ab_0    conda-forge
+cairo                     1.16.0            h6cf1ce9_1008    conda-forge
+catalogue                 2.0.6            py39hf3d152e_2    conda-forge
+certifi                   2022.6.15        py39hf3d152e_0    conda-forge
+cffi                      1.15.0           py39h4bc2ebd_0    conda-forge
+cfitsio                   4.1.0                hd9d235c_0    conda-forge
+charls                    2.3.4                h9c3ff4c_0    conda-forge
+charset-normalizer        2.0.12             pyhd8ed1ab_0    conda-forge
+clang                     5.0                      pypi_0    pypi
+click                     8.1.3            py39hf3d152e_0    conda-forge
+cloudpickle               2.1.0              pyhd8ed1ab_0    conda-forge
+colorama                  0.4.5              pyhd8ed1ab_0    conda-forge
+cryptography              37.0.2           py39hd97740a_0    conda-forge
+cudatoolkit               11.1.74              h6bb024c_0    nvidia
+cudnn                     8.2.1.32             h86fa8c9_0    conda-forge
+cycler                    0.11.0             pyhd8ed1ab_0    conda-forge
+cymem                     2.0.6            py39h5a03fae_3    conda-forge
+cython-blis               0.7.7            py39hd257fcd_1    conda-forge
+cytoolz                   0.11.2           py39hb9d737c_2    conda-forge
+dask-core                 2022.6.0           pyhd8ed1ab_0    conda-forge
+dataclasses               0.8                pyhc8e2a94_3    conda-forge
+dbus                      1.13.6               h5008d03_3    conda-forge
+docstring-parser          0.14.1                   pypi_0    pypi
+efficientnet-pytorch      0.7.1                    pypi_0    pypi
+einops                    0.4.1                    pypi_0    pypi
+expat                     2.4.8                h27087fc_0    conda-forge
+faiss                     1.7.2           py39cuda111h03baf68_0_cuda    conda-forge
+fastai                    2.5.0                      py_0    fastai
+fastcore                  1.3.29             pyhd8ed1ab_0    conda-forge
+fastdownload              0.0.6                      py_0    fastai
+fastprogress              1.0.2              pyhd8ed1ab_0    conda-forge
+ffmpeg                    4.3.2                h37c90e5_3    conda-forge
+flatbuffers               1.12                     pypi_0    pypi
+fontconfig                2.14.0               h8e229c2_0    conda-forge
+fonttools                 4.33.3           py39hb9d737c_0    conda-forge
+freetype                  2.10.4               h0708190_1    conda-forge
+frozenlist                1.3.0            py39hb9d737c_1    conda-forge
+fsspec                    2022.5.0           pyhd8ed1ab_0    conda-forge
+future                    0.18.2           py39hf3d152e_5    conda-forge
+gast                      0.4.0                    pypi_0    pypi
+geos                      3.10.3               h27087fc_0    conda-forge
+gettext                   0.19.8.1          h73d1719_1008    conda-forge
+giflib                    5.2.1                h36c2ea0_2    conda-forge
+gmp                       6.2.1                h58526e2_0    conda-forge
+gnutls                    3.6.13               h85f3911_1    conda-forge
+google-auth               2.8.0              pyh6c4a22f_0    conda-forge
+google-auth-oauthlib      0.4.6              pyhd8ed1ab_0    conda-forge
+google-pasta              0.2.0                    pypi_0    pypi
+graphite2                 1.3.13            h58526e2_1001    conda-forge
+grpcio                    1.46.3           py39h0f497a6_0    conda-forge
+gst-plugins-base          1.18.5               hf529b03_3    conda-forge
+gstreamer                 1.18.5               h9f60fe5_3    conda-forge
+h5py                      3.1.0                    pypi_0    pypi
+harfbuzz                  2.9.1                h83ec7ef_1    conda-forge
+hdf5                      1.10.6          nompi_h6a2412b_1114    conda-forge
+hydra-core                1.2.0                    pypi_0    pypi
+icu                       68.2                 h9c3ff4c_0    conda-forge
+idna                      3.3                pyhd8ed1ab_0    conda-forge
+imagecodecs               2022.2.22        py39h9c0c3a3_5    conda-forge
+imageio                   2.9.0                      py_0    conda-forge
+imgaug                    0.4.0              pyhd8ed1ab_1    conda-forge
+importlib-metadata        4.11.4           py39hf3d152e_0    conda-forge
+iniconfig                 1.1.1              pyh9f0ad1d_0    conda-forge
+jasper                    1.900.1           h07fcdf6_1006    conda-forge
+jinja2                    3.1.2              pyhd8ed1ab_1    conda-forge
+joblib                    1.1.0              pyhd8ed1ab_0    conda-forge
+jpeg                      9e                   h166bdaf_1    conda-forge
+jsonargparse              4.10.0                   pypi_0    pypi
+jxrlib                    1.1                  h7f98852_2    conda-forge
+keras                     2.6.0              pyhd8ed1ab_1    conda-forge
+keras-preprocessing       1.1.2                    pypi_0    pypi
+keyutils                  1.6.1                h166bdaf_0    conda-forge
+kiwisolver                1.4.3            py39hf939315_0    conda-forge
+kornia                    0.5.3                    pypi_0    pypi
+krb5                      1.19.3               h3790be6_0    conda-forge
+lame                      3.100             h7f98852_1001    conda-forge
+langcodes                 3.3.0              pyhd8ed1ab_0    conda-forge
+lcms2                     2.12                 hddcbb42_0    conda-forge
+ld_impl_linux-64          2.36.1               hea4e1c9_2    conda-forge
+lerc                      3.0                  h9c3ff4c_0    conda-forge
+libaec                    1.0.6                h9c3ff4c_0    conda-forge
+libavif                   0.10.1               h166bdaf_0    conda-forge
+libblas                   3.9.0                     8_mkl    conda-forge
+libbrotlicommon           1.0.9                h166bdaf_7    conda-forge
+libbrotlidec              1.0.9                h166bdaf_7    conda-forge
+libbrotlienc              1.0.9                h166bdaf_7    conda-forge
+libcblas                  3.9.0                     8_mkl    conda-forge
+libclang                  11.1.0          default_ha53f305_1    conda-forge
+libcurl                   7.83.1               h7bff187_0    conda-forge
+libdeflate                1.10                 h7f98852_0    conda-forge
+libedit                   3.1.20191231         he28a2e2_2    conda-forge
+libev                     4.33                 h516909a_1    conda-forge
+libevent                  2.1.10               h9b69904_4    conda-forge
+libfaiss                  1.7.2           cuda111h7721031_0_cuda    conda-forge
+libfaiss-avx2             1.7.2           cuda111h1234567_0_cuda    conda-forge
+libffi                    3.4.2                h7f98852_5    conda-forge
+libgcc-ng                 12.1.0              h8d9b700_16    conda-forge
+libgfortran-ng            12.1.0              h69a702a_16    conda-forge
+libgfortran5              12.1.0              hdcd56e2_16    conda-forge
+libglib                   2.70.2               h174f98d_4    conda-forge
+libiconv                  1.16                 h516909a_0    conda-forge
+liblapack                 3.9.0                     8_mkl    conda-forge
+liblapacke                3.9.0                     8_mkl    conda-forge
+libllvm11                 11.1.0               hf817b99_3    conda-forge
+libnghttp2                1.47.0               h727a467_0    conda-forge
+libogg                    1.3.4                h7f98852_1    conda-forge
+libopencv                 4.5.2            py39h2406f9b_0    conda-forge
+libopus                   1.3.1                h7f98852_1    conda-forge
+libpng                    1.6.37               h21135ba_2    conda-forge
+libpq                     13.5                 hd57d9b9_1    conda-forge
+libprotobuf               3.15.8               h780b84a_1    conda-forge
+libssh2                   1.10.0               ha56f1ee_2    conda-forge
+libstdcxx-ng              12.1.0              ha89aaad_16    conda-forge
+libtiff                   4.3.0                h0fcbabc_4    conda-forge
+libuuid                   2.32.1            h7f98852_1000    conda-forge
+libvorbis                 1.3.7                h9c3ff4c_0    conda-forge
+libwebp-base              1.2.2                h7f98852_1    conda-forge
+libxcb                    1.13              h7f98852_1004    conda-forge
+libxkbcommon              1.0.3                he3ba5ed_0    conda-forge
+libxml2                   2.9.12               h72842e0_0    conda-forge
+libzlib                   1.2.12               h166bdaf_1    conda-forge
+libzopfli                 1.0.3                h9c3ff4c_0    conda-forge
+lightning-bolts           0.5.0                    pypi_0    pypi
+lightning-flash           0.5.0                    pypi_0    pypi
+llvm-openmp               14.0.4               he0ac6c6_0    conda-forge
+llvmlite                  0.37.0           py39h1bbdace_1    conda-forge
+locket                    1.0.0              pyhd8ed1ab_0    conda-forge
+loguru                    0.5.3            py39hf3d152e_3    conda-forge
+lz4-c                     1.9.3                h9c3ff4c_1    conda-forge
+magma                     2.5.4                ha9b7cf9_2    conda-forge
+markdown                  3.3.7              pyhd8ed1ab_0    conda-forge
+markupsafe                2.1.1            py39hb9d737c_1    conda-forge
+matplotlib                3.5.2            py39hf3d152e_0    conda-forge
+matplotlib-base           3.5.2            py39h700656a_0    conda-forge
+mkl                       2020.4             h726a3e6_304    conda-forge
+mmcls                     0.21.0                   pypi_0    pypi
+mmcv                      1.5.0                    pypi_0    pypi
+more-itertools            8.13.0             pyhd8ed1ab_0    conda-forge
+multidict                 6.0.2            py39hb9d737c_1    conda-forge
+munch                     2.5.0                    pypi_0    pypi
+munkres                   1.1.4              pyh9f0ad1d_0    conda-forge
+murmurhash                1.0.7            py39h5a03fae_0    conda-forge
+mysql-common              8.0.29               haf5c9bc_1    conda-forge
+mysql-libs                8.0.29               h28c427c_1    conda-forge
+nccl                      2.12.12.1            h12f7317_0    conda-forge
+ncurses                   6.3                  h27087fc_1    conda-forge
+nettle                    3.6                  he412f7d_0    conda-forge
+networkx                  2.8.4              pyhd8ed1ab_0    conda-forge
+ninja                     1.11.0               h924138e_0    conda-forge
+nspr                      4.32                 h9c3ff4c_1    conda-forge
+nss                       3.78                 h2350873_0    conda-forge
+numba                     0.54.1           py39h56b8d98_0    conda-forge
+numpy                     1.19.5                   pypi_0    pypi
+oauthlib                  3.2.0              pyhd8ed1ab_0    conda-forge
+olefile                   0.46               pyh9f0ad1d_1    conda-forge
+omegaconf                 2.2.2                    pypi_0    pypi
+opencv                    4.5.2            py39hf3d152e_0    conda-forge
+openh264                  2.1.1                h780b84a_0    conda-forge
+openjpeg                  2.4.0                hb52868f_1    conda-forge
+openssl                   1.1.1p               h166bdaf_0    conda-forge
+opt-einsum                3.3.0                    pypi_0    pypi
+packaging                 21.3               pyhd8ed1ab_0    conda-forge
+pandas                    1.2.5            py39hde0f152_0    conda-forge
+partd                     1.2.0              pyhd8ed1ab_0    conda-forge
+pathy                     0.6.1              pyhd8ed1ab_0    conda-forge
+pcre                      8.45                 h9c3ff4c_0    conda-forge
+pillow                    8.2.0            py39hf95b381_1    conda-forge
+pip                       20.3.4             pyhd8ed1ab_0    conda-forge
+pixman                    0.40.0               h36c2ea0_0    conda-forge
+pluggy                    0.13.1           py39hf3d152e_4    conda-forge
+pooch                     1.6.0              pyhd8ed1ab_0    conda-forge
+preshed                   3.0.6            py39h5a03fae_2    conda-forge
+pretrainedmodels          0.7.4                    pypi_0    pypi
+protobuf                  3.15.8           py39he80948d_0    conda-forge
+pthread-stubs             0.4               h36c2ea0_1001    conda-forge
+py                        1.11.0             pyh6c4a22f_0    conda-forge
+py-opencv                 4.5.2            py39hef51801_0    conda-forge
+pyasn1                    0.4.8                      py_0    conda-forge
+pyasn1-modules            0.2.7                      py_0    conda-forge
+pycparser                 2.21               pyhd8ed1ab_0    conda-forge
+pydantic                  1.8.2            py39h3811e60_2    conda-forge
+pydeprecate               0.3.1              pyhd8ed1ab_0    conda-forge
+pyjwt                     2.4.0              pyhd8ed1ab_0    conda-forge
+pyopenssl                 22.0.0             pyhd8ed1ab_0    conda-forge
+pyparsing                 3.0.9              pyhd8ed1ab_0    conda-forge
+pyqt                      5.12.3           py39hf3d152e_8    conda-forge
+pyqt-impl                 5.12.3           py39hde8b62d_8    conda-forge
+pyqt5-sip                 4.19.18          py39he80948d_8    conda-forge
+pyqtchart                 5.12             py39h0fcd23e_8    conda-forge
+pyqtwebengine             5.12.1           py39h0fcd23e_8    conda-forge
+pysocks                   1.7.1            py39hf3d152e_5    conda-forge
+pystiche                  1.0.1                    pypi_0    pypi
+pytest                    6.2.4            py39hf3d152e_0    conda-forge
+python                    3.9.7           hb7a2778_3_cpython    conda-forge
+python-dateutil           2.8.2              pyhd8ed1ab_0    conda-forge
+python_abi                3.9                      2_cp39    conda-forge
+pytorch                   1.8.0           cuda111py39h37e5b68_1    conda-forge
+pytorch-lightning         1.4.1              pyhd8ed1ab_0    conda-forge
+pytorch-metric-learning   1.3.0              pyh39e3cac_0    metric-learning
+pytz                      2022.1             pyhd8ed1ab_0    conda-forge
+pyu2f                     0.1.5              pyhd8ed1ab_0    conda-forge
+pywavelets                1.3.0            py39hd257fcd_1    conda-forge
+pyyaml                    6.0              py39hb9d737c_4    conda-forge
+qt                        5.12.9               hda022c4_4    conda-forge
+readline                  8.1.2                h0f457ee_0    conda-forge
+requests                  2.28.0             pyhd8ed1ab_0    conda-forge
+requests-oauthlib         1.3.1              pyhd8ed1ab_0    conda-forge
+rsa                       4.8                pyhd8ed1ab_0    conda-forge
+scikit-image              0.18.2           py39hde0f152_0    conda-forge
+scikit-learn              0.24.2           py39h7c5d8c9_1    conda-forge
+scipy                     1.7.1            py39hee8e79c_0    conda-forge
+segmentation-models-pytorch 0.1.0                    pypi_0    pypi
+setuptools                59.8.0           py39hf3d152e_1    conda-forge
+shapely                   1.8.2            py39h4fbd0eb_2    conda-forge
+shellingham               1.4.0              pyh44b312d_0    conda-forge
+six                       1.15.0                   pypi_0    pypi
+sleef                     3.5.1                h9b69904_2    conda-forge
+smart_open                5.2.1              pyhd8ed1ab_0    conda-forge
+snappy                    1.1.9                hbd366e4_1    conda-forge
+spacy                     3.3.1            py39hac2352c_0    conda-forge
+spacy-legacy              3.0.9              pyhd8ed1ab_0    conda-forge
+spacy-loggers             1.0.2              pyhd8ed1ab_0    conda-forge
+sqlite                    3.38.5               h4ff8645_0    conda-forge
+srsly                     2.4.3            py39h5a03fae_1    conda-forge
+tensorboard               2.9.1              pyhd8ed1ab_0    conda-forge
+tensorboard-data-server   0.6.0            py39hd97740a_2    conda-forge
+tensorboard-plugin-wit    1.8.1              pyhd8ed1ab_0    conda-forge
+tensorflow-estimator      2.6.0                    pypi_0    pypi
+tensorflow-gpu            2.6.0                    pypi_0    pypi
+tensorflow-hub            0.12.0                   pypi_0    pypi
+termcolor                 1.1.0                    pypi_0    pypi
+thinc                     8.0.17           py39hac2352c_0    conda-forge
+threadpoolctl             3.1.0              pyh8a188c0_0    conda-forge
+tifffile                  2022.5.4           pyhd8ed1ab_0    conda-forge
+timm                      0.5.4                    pypi_0    pypi
+tk                        8.6.12               h27826a3_0    conda-forge
+toml                      0.10.2             pyhd8ed1ab_0    conda-forge
+toolz                     0.11.2             pyhd8ed1ab_0    conda-forge
+torchmetrics              0.5.0                    pypi_0    pypi
+torchvision               0.9.1           py39cuda111hcd06603_1_cuda    conda-forge
+tornado                   6.1              py39hb9d737c_3    conda-forge
+tqdm                      4.62.0             pyhd8ed1ab_0    conda-forge
+typer                     0.4.1              pyhd8ed1ab_0    conda-forge
+typing-extensions         3.7.4.3                  pypi_0    pypi
+tzdata                    2022a                h191b570_0    conda-forge
+unicodedata2              14.0.0           py39hb9d737c_1    conda-forge
+urllib3                   1.26.9             pyhd8ed1ab_0    conda-forge
+wasabi                    0.9.1              pyhd8ed1ab_0    conda-forge
+werkzeug                  2.1.2              pyhd8ed1ab_1    conda-forge
+wheel                     0.37.1             pyhd8ed1ab_0    conda-forge
+wrapt                     1.12.1                   pypi_0    pypi
+x264                      1!161.3030           h7f98852_1    conda-forge
+xorg-kbproto              1.0.7             h7f98852_1002    conda-forge
+xorg-libice               1.0.10               h7f98852_0    conda-forge
+xorg-libsm                1.2.3             hd9c2040_1000    conda-forge
+xorg-libx11               1.7.2                h7f98852_0    conda-forge
+xorg-libxau               1.0.9                h7f98852_0    conda-forge
+xorg-libxdmcp             1.1.3                h7f98852_0    conda-forge
+xorg-libxext              1.3.4                h7f98852_1    conda-forge
+xorg-libxrender           0.9.10            h7f98852_1003    conda-forge
+xorg-renderproto          0.11.1            h7f98852_1002    conda-forge
+xorg-xextproto            7.3.0             h7f98852_1002    conda-forge
+xorg-xproto               7.0.31            h7f98852_1007    conda-forge
+xz                        5.2.5                h516909a_1    conda-forge
+yaml                      0.2.5                h7f98852_2    conda-forge
+yapf                      0.32.0                   pypi_0    pypi
+yarl                      1.7.2            py39hb9d737c_2    conda-forge
+zfp                       0.5.5                h9c3ff4c_8    conda-forge
+zipp                      3.8.0              pyhd8ed1ab_0    conda-forge
+zlib                      1.2.12               h166bdaf_1    conda-forge
+zlib-ng                   2.0.6                h166bdaf_0    conda-forge
+zstd                      1.5.2                h8a70e8d_1    conda-forge
++ echo '######################################'
+######################################
++ echo 'Unpacking submission...'
+Unpacking submission...
++ unzip ./submission/submission.zip -d ./
+Archive:  ./submission/submission.zip
+  inflating: ./main.py               
+   creating: ./models/
+   creating: ./models/models_eff7_r41_448_v4/
+  inflating: ./models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f0_p1.pth  
+  inflating: ./models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f1_p1.pth  
+  inflating: ./models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f4_p1.pth  
+  inflating: ./models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f2_p1.pth  
+  inflating: ./models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f3_p1.pth  
+   creating: ./models/models_eff5_r107_416/
+  inflating: ./models/models_eff5_r107_416/tf_efficientnet_b5_ns_f0_p1.pth  
+   creating: ./models/models_eff5_r107_416/.ipynb_checkpoints/
+  inflating: ./models/models_eff5_r107_416/tf_efficientnet_b5_ns_f1_p1.pth  
+  inflating: ./models/models_eff5_r107_416/tf_efficientnet_b5_ns_f3_p1.pth  
+  inflating: ./models/models_eff5_r107_416/tf_efficientnet_b5_ns_f4_p1.pth  
+  inflating: ./models/models_eff5_r107_416/tf_efficientnet_b5_ns_f2_p1.pth  
+   creating: ./models/models_eff7_r888_256/
+  inflating: ./models/models_eff7_r888_256/tf_efficientnet_b7_ns_f0_p1.pth  
+  inflating: ./models/models_eff7_r888_256/tf_efficientnet_b7_ns_f1_p1.pth  
+  inflating: ./models/models_eff7_r888_256/tf_efficientnet_b7_ns_f4_p1.pth  
+  inflating: ./models/models_eff7_r888_256/tf_efficientnet_b7_ns_f2_p1.pth  
+  inflating: ./models/models_eff7_r888_256/tf_efficientnet_b7_ns_f3_p1.pth  
++ ls -alh
+total 40K
+drwxr-xr-x 1 appuser appuser 4.0K Jun 25 23:05 .
+drwxr-xr-x 1 root    root    4.0K Jun 25 23:05 ..
+drwxrwxrwx 2 appuser appuser 4.0K Jun 25 23:05 data
+-rw-r--r-- 1 appuser appuser  772 Jun 22 15:11 entrypoint.sh
+-rw-r--r-- 1 appuser appuser  15K Jun 26  2022 main.py
+drwxr-xr-x 5 appuser appuser 4.0K Jun 25 16:02 models
+drwxr-xr-x 2 appuser appuser 4.0K Jun 22 15:23 predictions
+drwxrwxrwx 2 appuser appuser 4.0K Jun 25 23:05 submission
+drwxr-xr-x 2 appuser appuser 4.0K Jun 22 15:23 tests
++ '[' -f main.py ']'
++ echo 'Running code submission with Python'
+Running code submission with Python
++ conda run --no-capture-output -n condaenv python main.py
+2022-06-25 23:06:25.638 | INFO     | __main__:<module>:28 - using 6 threads
+2022-06-25 23:06:25.920 | INFO     | __main__:main:307 - Starting main script
+2022-06-25 23:06:25.933 | INFO     | __main__:main:311 - Loading pre-trained model
+2022-06-25 23:06:29.876 | INFO     | __main__:main:338 - Precomputing embeddings for model models/models_eff7_r888_256/tf_efficientnet_b7_ns_f0_p1.pth
+2022-06-25 23:11:16.807 | INFO     | __main__:main:338 - Precomputing embeddings for model models/models_eff7_r888_256/tf_efficientnet_b7_ns_f1_p1.pth
+2022-06-25 23:16:00.976 | INFO     | __main__:main:338 - Precomputing embeddings for model models/models_eff7_r888_256/tf_efficientnet_b7_ns_f2_p1.pth
+2022-06-25 23:20:45.413 | INFO     | __main__:main:338 - Precomputing embeddings for model models/models_eff7_r888_256/tf_efficientnet_b7_ns_f3_p1.pth
+2022-06-25 23:25:30.014 | INFO     | __main__:main:338 - Precomputing embeddings for model models/models_eff7_r888_256/tf_efficientnet_b7_ns_f4_p1.pth
+2022-06-25 23:30:14.496 | INFO     | __main__:main:349 - Precomputing embeddings for model models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f0_p1.pth
+2022-06-25 23:45:26.364 | INFO     | __main__:main:349 - Precomputing embeddings for model models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f1_p1.pth
+2022-06-26 00:00:41.430 | INFO     | __main__:main:349 - Precomputing embeddings for model models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f2_p1.pth
+2022-06-26 00:15:45.699 | INFO     | __main__:main:349 - Precomputing embeddings for model models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f3_p1.pth
+2022-06-26 00:31:01.337 | INFO     | __main__:main:349 - Precomputing embeddings for model models/models_eff7_r41_448_v4/tf_efficientnet_b7_ns_f4_p1.pth
+2022-06-26 00:46:06.477 | INFO     | __main__:main:362 - Precomputing embeddings for model models/models_eff5_r107_416/tf_efficientnet_b5_ns_f0_p1.pth
+2022-06-26 00:53:48.166 | INFO     | __main__:main:362 - Precomputing embeddings for model models/models_eff5_r107_416/tf_efficientnet_b5_ns_f1_p1.pth
+2022-06-26 01:01:22.702 | INFO     | __main__:main:362 - Precomputing embeddings for model models/models_eff5_r107_416/tf_efficientnet_b5_ns_f2_p1.pth
+2022-06-26 01:08:57.171 | INFO     | __main__:main:362 - Precomputing embeddings for model models/models_eff5_r107_416/tf_efficientnet_b5_ns_f3_p1.pth
+2022-06-26 01:16:31.828 | INFO     | __main__:main:362 - Precomputing embeddings for model models/models_eff5_r107_416/tf_efficientnet_b5_ns_f4_p1.pth
+2022-06-26 01:24:06.513 | INFO     | __main__:main:367 - Generating image rankings
+2022-06-26 01:24:06.514 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario01', queries_path='queries/scenario01.csv', database_path='databases/scenario01.csv')
+2022-06-26 01:24:06.649 | INFO     | __main__:main:391 - Task # 1 processing 197 queries
+2022-06-26 01:24:06.651 | INFO     | __main__:main:391 - Task # 2 processing 197 queries
+2022-06-26 01:24:06.652 | INFO     | __main__:main:391 - Task # 3 processing 197 queries
+2022-06-26 01:24:06.653 | INFO     | __main__:main:391 - Task # 4 processing 197 queries
+2022-06-26 01:24:06.654 | INFO     | __main__:main:391 - Task # 5 processing 197 queries
+2022-06-26 01:24:06.656 | INFO     | __main__:main:391 - Task # 6 processing 198 queries
+2022-06-26 01:31:13.659 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario02', queries_path='queries/scenario02.csv', database_path='databases/scenario02.csv')
+2022-06-26 01:31:14.156 | INFO     | __main__:main:391 - Task # 1 processing 94 queries
+2022-06-26 01:31:14.157 | INFO     | __main__:main:391 - Task # 2 processing 95 queries
+2022-06-26 01:31:14.158 | INFO     | __main__:main:391 - Task # 3 processing 94 queries
+2022-06-26 01:31:14.159 | INFO     | __main__:main:391 - Task # 4 processing 95 queries
+2022-06-26 01:31:14.159 | INFO     | __main__:main:391 - Task # 5 processing 94 queries
+2022-06-26 01:31:14.160 | INFO     | __main__:main:391 - Task # 6 processing 95 queries
+2022-06-26 01:32:22.063 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario03', queries_path='queries/scenario03.csv', database_path='databases/scenario03.csv')
+2022-06-26 01:32:22.522 | INFO     | __main__:main:391 - Task # 1 processing 102 queries
+2022-06-26 01:32:22.524 | INFO     | __main__:main:391 - Task # 2 processing 103 queries
+2022-06-26 01:32:22.525 | INFO     | __main__:main:391 - Task # 3 processing 103 queries
+2022-06-26 01:32:22.526 | INFO     | __main__:main:391 - Task # 4 processing 102 queries
+2022-06-26 01:32:22.527 | INFO     | __main__:main:391 - Task # 5 processing 103 queries
+2022-06-26 01:32:22.527 | INFO     | __main__:main:391 - Task # 6 processing 103 queries
+2022-06-26 01:35:47.226 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario04', queries_path='queries/scenario04.csv', database_path='databases/scenario04.csv')
+2022-06-26 01:35:47.669 | INFO     | __main__:main:391 - Task # 1 processing 46 queries
+2022-06-26 01:35:47.670 | INFO     | __main__:main:391 - Task # 2 processing 47 queries
+2022-06-26 01:35:47.671 | INFO     | __main__:main:391 - Task # 3 processing 46 queries
+2022-06-26 01:35:47.672 | INFO     | __main__:main:391 - Task # 4 processing 47 queries
+2022-06-26 01:35:47.672 | INFO     | __main__:main:391 - Task # 5 processing 46 queries
+2022-06-26 01:35:47.673 | INFO     | __main__:main:391 - Task # 6 processing 47 queries
+2022-06-26 01:36:32.545 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario05', queries_path='queries/scenario05.csv', database_path='databases/scenario05.csv')
+2022-06-26 01:36:32.975 | INFO     | __main__:main:391 - Task # 1 processing 51 queries
+2022-06-26 01:36:32.976 | INFO     | __main__:main:391 - Task # 2 processing 51 queries
+2022-06-26 01:36:32.977 | INFO     | __main__:main:391 - Task # 3 processing 51 queries
+2022-06-26 01:36:32.978 | INFO     | __main__:main:391 - Task # 4 processing 51 queries
+2022-06-26 01:36:32.978 | INFO     | __main__:main:391 - Task # 5 processing 51 queries
+2022-06-26 01:36:32.979 | INFO     | __main__:main:391 - Task # 6 processing 51 queries
+2022-06-26 01:37:19.282 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario06', queries_path='queries/scenario06.csv', database_path='databases/scenario06.csv')
+2022-06-26 01:37:19.686 | INFO     | __main__:main:391 - Task # 1 processing 83 queries
+2022-06-26 01:37:19.688 | INFO     | __main__:main:391 - Task # 2 processing 84 queries
+2022-06-26 01:37:19.688 | INFO     | __main__:main:391 - Task # 3 processing 83 queries
+2022-06-26 01:37:19.689 | INFO     | __main__:main:391 - Task # 4 processing 84 queries
+2022-06-26 01:37:19.690 | INFO     | __main__:main:391 - Task # 5 processing 83 queries
+2022-06-26 01:37:19.691 | INFO     | __main__:main:391 - Task # 6 processing 84 queries
+2022-06-26 01:38:45.917 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario07', queries_path='queries/scenario07.csv', database_path='databases/scenario07.csv')
+2022-06-26 01:38:46.100 | INFO     | __main__:main:391 - Task # 1 processing 45 queries
+2022-06-26 01:38:46.101 | INFO     | __main__:main:391 - Task # 2 processing 46 queries
+2022-06-26 01:38:46.102 | INFO     | __main__:main:391 - Task # 3 processing 46 queries
+2022-06-26 01:38:46.103 | INFO     | __main__:main:391 - Task # 4 processing 45 queries
+2022-06-26 01:38:46.103 | INFO     | __main__:main:391 - Task # 5 processing 46 queries
+2022-06-26 01:38:46.104 | INFO     | __main__:main:391 - Task # 6 processing 46 queries
+2022-06-26 01:39:16.681 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario08', queries_path='queries/scenario08.csv', database_path='databases/scenario08.csv')
+2022-06-26 01:39:16.857 | INFO     | __main__:main:391 - Task # 1 processing 47 queries
+2022-06-26 01:39:16.858 | INFO     | __main__:main:391 - Task # 2 processing 47 queries
+2022-06-26 01:39:16.859 | INFO     | __main__:main:391 - Task # 3 processing 47 queries
+2022-06-26 01:39:16.859 | INFO     | __main__:main:391 - Task # 4 processing 47 queries
+2022-06-26 01:39:16.860 | INFO     | __main__:main:391 - Task # 5 processing 47 queries
+2022-06-26 01:39:16.861 | INFO     | __main__:main:391 - Task # 6 processing 47 queries
+2022-06-26 01:39:45.515 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario09', queries_path='queries/scenario09.csv', database_path='databases/scenario09.csv')
+2022-06-26 01:39:45.697 | INFO     | __main__:main:391 - Task # 1 processing 17 queries
+2022-06-26 01:39:45.699 | INFO     | __main__:main:391 - Task # 2 processing 17 queries
+2022-06-26 01:39:45.699 | INFO     | __main__:main:391 - Task # 3 processing 17 queries
+2022-06-26 01:39:45.700 | INFO     | __main__:main:391 - Task # 4 processing 17 queries
+2022-06-26 01:39:45.701 | INFO     | __main__:main:391 - Task # 5 processing 17 queries
+2022-06-26 01:39:45.701 | INFO     | __main__:main:391 - Task # 6 processing 17 queries
+2022-06-26 01:39:55.851 | INFO     | __main__:main:370 - processing scenario Pandas(Index='scenario10', queries_path='queries/scenario10.csv', database_path='databases/scenario10.csv')
+2022-06-26 01:39:56.025 | INFO     | __main__:main:391 - Task # 1 processing 51 queries
+2022-06-26 01:39:56.026 | INFO     | __main__:main:391 - Task # 2 processing 52 queries
+2022-06-26 01:39:56.027 | INFO     | __main__:main:391 - Task # 3 processing 51 queries
+2022-06-26 01:39:56.028 | INFO     | __main__:main:391 - Task # 4 processing 52 queries
+2022-06-26 01:39:56.028 | INFO     | __main__:main:391 - Task # 5 processing 51 queries
+2022-06-26 01:39:56.029 | INFO     | __main__:main:391 - Task # 6 processing 52 queries
+2022-06-26 01:40:14.473 | INFO     | __main__:main:400 - Writing predictions file to /code_execution/submission/submission.csv
+2022-06-26 01:40:14.503 | INFO     | __main__:main:402 - submission: (88380, 3) 4419
++ echo '... finished'
+... finished
++ echo '================ END ================'
+================ END ================
++ cp /code_execution/submission/log.txt /tmp/log
++ exit 0

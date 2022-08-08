@@ -1,0 +1,849 @@
++ exit_code=0
++ tee /code_execution/submission/log.txt
++ cd /code_execution
++ echo 'List installed packages'
+List installed packages
++ echo '######################################'
+######################################
++ conda list -n condaenv
+# packages in environment at /srv/conda/envs/condaenv:
+#
+# Name                    Version                   Build  Channel
+_libgcc_mutex             0.1                 conda_forge    conda-forge
+_openmp_mutex             4.5                  2_kmp_llvm    conda-forge
+absl-py                   0.15.0                   pypi_0    pypi
+addict                    2.4.0                    pypi_0    pypi
+aiohttp                   3.8.1            py39hb9d737c_1    conda-forge
+aiosignal                 1.2.0              pyhd8ed1ab_0    conda-forge
+albumentations            1.0.3              pyhd8ed1ab_0    conda-forge
+alsa-lib                  1.2.3.2              h166bdaf_0    conda-forge
+antlr4-python3-runtime    4.9.3                    pypi_0    pypi
+aom                       3.3.0                h27087fc_1    conda-forge
+appdirs                   1.4.4              pyh9f0ad1d_0    conda-forge
+astunparse                1.6.3                    pypi_0    pypi
+async-timeout             4.0.2              pyhd8ed1ab_0    conda-forge
+attrs                     21.4.0             pyhd8ed1ab_0    conda-forge
+blinker                   1.4                        py_1    conda-forge
+blosc                     1.21.1               h83bc5f7_3    conda-forge
+brotli                    1.0.9                h166bdaf_7    conda-forge
+brotli-bin                1.0.9                h166bdaf_7    conda-forge
+brotlipy                  0.7.0           py39hb9d737c_1004    conda-forge
+brunsli                   0.1                  h9c3ff4c_0    conda-forge
+bzip2                     1.0.8                h7f98852_4    conda-forge
+c-ares                    1.18.1               h7f98852_0    conda-forge
+c-blosc2                  2.1.1                h7a311fb_2    conda-forge
+ca-certificates           2022.6.15            ha878542_0    conda-forge
+cachetools                5.0.0              pyhd8ed1ab_0    conda-forge
+cairo                     1.16.0            h6cf1ce9_1008    conda-forge
+catalogue                 2.0.6            py39hf3d152e_2    conda-forge
+certifi                   2022.6.15        py39hf3d152e_0    conda-forge
+cffi                      1.15.0           py39h4bc2ebd_0    conda-forge
+cfitsio                   4.1.0                hd9d235c_0    conda-forge
+charls                    2.3.4                h9c3ff4c_0    conda-forge
+charset-normalizer        2.0.12             pyhd8ed1ab_0    conda-forge
+clang                     5.0                      pypi_0    pypi
+click                     8.1.3            py39hf3d152e_0    conda-forge
+cloudpickle               2.1.0              pyhd8ed1ab_0    conda-forge
+colorama                  0.4.5              pyhd8ed1ab_0    conda-forge
+cryptography              37.0.2           py39hd97740a_0    conda-forge
+cudatoolkit               11.1.74              h6bb024c_0    nvidia
+cudnn                     8.2.1.32             h86fa8c9_0    conda-forge
+cycler                    0.11.0             pyhd8ed1ab_0    conda-forge
+cymem                     2.0.6            py39h5a03fae_3    conda-forge
+cython-blis               0.7.7            py39hd257fcd_1    conda-forge
+cytoolz                   0.11.2           py39hb9d737c_2    conda-forge
+dask-core                 2022.6.0           pyhd8ed1ab_0    conda-forge
+dataclasses               0.8                pyhc8e2a94_3    conda-forge
+dbus                      1.13.6               h5008d03_3    conda-forge
+docstring-parser          0.14.1                   pypi_0    pypi
+efficientnet-pytorch      0.7.1                    pypi_0    pypi
+einops                    0.4.1                    pypi_0    pypi
+expat                     2.4.8                h27087fc_0    conda-forge
+faiss                     1.7.2           py39cuda111h03baf68_0_cuda    conda-forge
+fastai                    2.5.0                      py_0    fastai
+fastcore                  1.3.29             pyhd8ed1ab_0    conda-forge
+fastdownload              0.0.6                      py_0    fastai
+fastprogress              1.0.2              pyhd8ed1ab_0    conda-forge
+ffmpeg                    4.3.2                h37c90e5_3    conda-forge
+flatbuffers               1.12                     pypi_0    pypi
+fontconfig                2.14.0               h8e229c2_0    conda-forge
+fonttools                 4.33.3           py39hb9d737c_0    conda-forge
+freetype                  2.10.4               h0708190_1    conda-forge
+frozenlist                1.3.0            py39hb9d737c_1    conda-forge
+fsspec                    2022.5.0           pyhd8ed1ab_0    conda-forge
+future                    0.18.2           py39hf3d152e_5    conda-forge
+gast                      0.4.0                    pypi_0    pypi
+geos                      3.10.3               h27087fc_0    conda-forge
+gettext                   0.19.8.1          h73d1719_1008    conda-forge
+giflib                    5.2.1                h36c2ea0_2    conda-forge
+gmp                       6.2.1                h58526e2_0    conda-forge
+gnutls                    3.6.13               h85f3911_1    conda-forge
+google-auth               2.8.0              pyh6c4a22f_0    conda-forge
+google-auth-oauthlib      0.4.6              pyhd8ed1ab_0    conda-forge
+google-pasta              0.2.0                    pypi_0    pypi
+graphite2                 1.3.13            h58526e2_1001    conda-forge
+grpcio                    1.46.3           py39h0f497a6_0    conda-forge
+gst-plugins-base          1.18.5               hf529b03_3    conda-forge
+gstreamer                 1.18.5               h9f60fe5_3    conda-forge
+h5py                      3.1.0                    pypi_0    pypi
+harfbuzz                  2.9.1                h83ec7ef_1    conda-forge
+hdf5                      1.10.6          nompi_h6a2412b_1114    conda-forge
+hydra-core                1.2.0                    pypi_0    pypi
+icu                       68.2                 h9c3ff4c_0    conda-forge
+idna                      3.3                pyhd8ed1ab_0    conda-forge
+imagecodecs               2022.2.22        py39h9c0c3a3_5    conda-forge
+imageio                   2.9.0                      py_0    conda-forge
+imgaug                    0.4.0              pyhd8ed1ab_1    conda-forge
+importlib-metadata        4.11.4           py39hf3d152e_0    conda-forge
+iniconfig                 1.1.1              pyh9f0ad1d_0    conda-forge
+jasper                    1.900.1           h07fcdf6_1006    conda-forge
+jinja2                    3.1.2              pyhd8ed1ab_1    conda-forge
+joblib                    1.1.0              pyhd8ed1ab_0    conda-forge
+jpeg                      9e                   h166bdaf_1    conda-forge
+jsonargparse              4.10.0                   pypi_0    pypi
+jxrlib                    1.1                  h7f98852_2    conda-forge
+keras                     2.6.0              pyhd8ed1ab_1    conda-forge
+keras-preprocessing       1.1.2                    pypi_0    pypi
+keyutils                  1.6.1                h166bdaf_0    conda-forge
+kiwisolver                1.4.3            py39hf939315_0    conda-forge
+kornia                    0.5.3                    pypi_0    pypi
+krb5                      1.19.3               h3790be6_0    conda-forge
+lame                      3.100             h7f98852_1001    conda-forge
+langcodes                 3.3.0              pyhd8ed1ab_0    conda-forge
+lcms2                     2.12                 hddcbb42_0    conda-forge
+ld_impl_linux-64          2.36.1               hea4e1c9_2    conda-forge
+lerc                      3.0                  h9c3ff4c_0    conda-forge
+libaec                    1.0.6                h9c3ff4c_0    conda-forge
+libavif                   0.10.1               h166bdaf_0    conda-forge
+libblas                   3.9.0                     8_mkl    conda-forge
+libbrotlicommon           1.0.9                h166bdaf_7    conda-forge
+libbrotlidec              1.0.9                h166bdaf_7    conda-forge
+libbrotlienc              1.0.9                h166bdaf_7    conda-forge
+libcblas                  3.9.0                     8_mkl    conda-forge
+libclang                  11.1.0          default_ha53f305_1    conda-forge
+libcurl                   7.83.1               h7bff187_0    conda-forge
+libdeflate                1.10                 h7f98852_0    conda-forge
+libedit                   3.1.20191231         he28a2e2_2    conda-forge
+libev                     4.33                 h516909a_1    conda-forge
+libevent                  2.1.10               h9b69904_4    conda-forge
+libfaiss                  1.7.2           cuda111h7721031_0_cuda    conda-forge
+libfaiss-avx2             1.7.2           cuda111h1234567_0_cuda    conda-forge
+libffi                    3.4.2                h7f98852_5    conda-forge
+libgcc-ng                 12.1.0              h8d9b700_16    conda-forge
+libgfortran-ng            12.1.0              h69a702a_16    conda-forge
+libgfortran5              12.1.0              hdcd56e2_16    conda-forge
+libglib                   2.70.2               h174f98d_4    conda-forge
+libiconv                  1.16                 h516909a_0    conda-forge
+liblapack                 3.9.0                     8_mkl    conda-forge
+liblapacke                3.9.0                     8_mkl    conda-forge
+libllvm11                 11.1.0               hf817b99_3    conda-forge
+libnghttp2                1.47.0               h727a467_0    conda-forge
+libogg                    1.3.4                h7f98852_1    conda-forge
+libopencv                 4.5.2            py39h2406f9b_0    conda-forge
+libopus                   1.3.1                h7f98852_1    conda-forge
+libpng                    1.6.37               h21135ba_2    conda-forge
+libpq                     13.5                 hd57d9b9_1    conda-forge
+libprotobuf               3.15.8               h780b84a_1    conda-forge
+libssh2                   1.10.0               ha56f1ee_2    conda-forge
+libstdcxx-ng              12.1.0              ha89aaad_16    conda-forge
+libtiff                   4.3.0                h0fcbabc_4    conda-forge
+libuuid                   2.32.1            h7f98852_1000    conda-forge
+libvorbis                 1.3.7                h9c3ff4c_0    conda-forge
+libwebp-base              1.2.2                h7f98852_1    conda-forge
+libxcb                    1.13              h7f98852_1004    conda-forge
+libxkbcommon              1.0.3                he3ba5ed_0    conda-forge
+libxml2                   2.9.12               h72842e0_0    conda-forge
+libzlib                   1.2.12               h166bdaf_1    conda-forge
+libzopfli                 1.0.3                h9c3ff4c_0    conda-forge
+lightning-bolts           0.5.0                    pypi_0    pypi
+lightning-flash           0.5.0                    pypi_0    pypi
+llvm-openmp               14.0.4               he0ac6c6_0    conda-forge
+llvmlite                  0.37.0           py39h1bbdace_1    conda-forge
+locket                    1.0.0              pyhd8ed1ab_0    conda-forge
+loguru                    0.5.3            py39hf3d152e_3    conda-forge
+lz4-c                     1.9.3                h9c3ff4c_1    conda-forge
+magma                     2.5.4                ha9b7cf9_2    conda-forge
+markdown                  3.3.7              pyhd8ed1ab_0    conda-forge
+markupsafe                2.1.1            py39hb9d737c_1    conda-forge
+matplotlib                3.5.2            py39hf3d152e_0    conda-forge
+matplotlib-base           3.5.2            py39h700656a_0    conda-forge
+mkl                       2020.4             h726a3e6_304    conda-forge
+mmcls                     0.21.0                   pypi_0    pypi
+mmcv                      1.5.0                    pypi_0    pypi
+more-itertools            8.13.0             pyhd8ed1ab_0    conda-forge
+multidict                 6.0.2            py39hb9d737c_1    conda-forge
+munch                     2.5.0                    pypi_0    pypi
+munkres                   1.1.4              pyh9f0ad1d_0    conda-forge
+murmurhash                1.0.7            py39h5a03fae_0    conda-forge
+mysql-common              8.0.29               haf5c9bc_1    conda-forge
+mysql-libs                8.0.29               h28c427c_1    conda-forge
+nccl                      2.12.12.1            h12f7317_0    conda-forge
+ncurses                   6.3                  h27087fc_1    conda-forge
+nettle                    3.6                  he412f7d_0    conda-forge
+networkx                  2.8.4              pyhd8ed1ab_0    conda-forge
+ninja                     1.11.0               h924138e_0    conda-forge
+nspr                      4.32                 h9c3ff4c_1    conda-forge
+nss                       3.78                 h2350873_0    conda-forge
+numba                     0.54.1           py39h56b8d98_0    conda-forge
+numpy                     1.19.5                   pypi_0    pypi
+oauthlib                  3.2.0              pyhd8ed1ab_0    conda-forge
+olefile                   0.46               pyh9f0ad1d_1    conda-forge
+omegaconf                 2.2.2                    pypi_0    pypi
+opencv                    4.5.2            py39hf3d152e_0    conda-forge
+openh264                  2.1.1                h780b84a_0    conda-forge
+openjpeg                  2.4.0                hb52868f_1    conda-forge
+openssl                   1.1.1p               h166bdaf_0    conda-forge
+opt-einsum                3.3.0                    pypi_0    pypi
+packaging                 21.3               pyhd8ed1ab_0    conda-forge
+pandas                    1.2.5            py39hde0f152_0    conda-forge
+partd                     1.2.0              pyhd8ed1ab_0    conda-forge
+pathy                     0.6.1              pyhd8ed1ab_0    conda-forge
+pcre                      8.45                 h9c3ff4c_0    conda-forge
+pillow                    8.2.0            py39hf95b381_1    conda-forge
+pip                       20.3.4             pyhd8ed1ab_0    conda-forge
+pixman                    0.40.0               h36c2ea0_0    conda-forge
+pluggy                    0.13.1           py39hf3d152e_4    conda-forge
+pooch                     1.6.0              pyhd8ed1ab_0    conda-forge
+preshed                   3.0.6            py39h5a03fae_2    conda-forge
+pretrainedmodels          0.7.4                    pypi_0    pypi
+protobuf                  3.15.8           py39he80948d_0    conda-forge
+pthread-stubs             0.4               h36c2ea0_1001    conda-forge
+py                        1.11.0             pyh6c4a22f_0    conda-forge
+py-opencv                 4.5.2            py39hef51801_0    conda-forge
+pyasn1                    0.4.8                      py_0    conda-forge
+pyasn1-modules            0.2.7                      py_0    conda-forge
+pycparser                 2.21               pyhd8ed1ab_0    conda-forge
+pydantic                  1.8.2            py39h3811e60_2    conda-forge
+pydeprecate               0.3.1              pyhd8ed1ab_0    conda-forge
+pyjwt                     2.4.0              pyhd8ed1ab_0    conda-forge
+pyopenssl                 22.0.0             pyhd8ed1ab_0    conda-forge
+pyparsing                 3.0.9              pyhd8ed1ab_0    conda-forge
+pyqt                      5.12.3           py39hf3d152e_8    conda-forge
+pyqt-impl                 5.12.3           py39hde8b62d_8    conda-forge
+pyqt5-sip                 4.19.18          py39he80948d_8    conda-forge
+pyqtchart                 5.12             py39h0fcd23e_8    conda-forge
+pyqtwebengine             5.12.1           py39h0fcd23e_8    conda-forge
+pysocks                   1.7.1            py39hf3d152e_5    conda-forge
+pystiche                  1.0.1                    pypi_0    pypi
+pytest                    6.2.4            py39hf3d152e_0    conda-forge
+python                    3.9.7           hb7a2778_3_cpython    conda-forge
+python-dateutil           2.8.2              pyhd8ed1ab_0    conda-forge
+python_abi                3.9                      2_cp39    conda-forge
+pytorch                   1.8.0           cuda111py39h37e5b68_1    conda-forge
+pytorch-lightning         1.4.1              pyhd8ed1ab_0    conda-forge
+pytorch-metric-learning   1.3.0              pyh39e3cac_0    metric-learning
+pytz                      2022.1             pyhd8ed1ab_0    conda-forge
+pyu2f                     0.1.5              pyhd8ed1ab_0    conda-forge
+pywavelets                1.3.0            py39hd257fcd_1    conda-forge
+pyyaml                    6.0              py39hb9d737c_4    conda-forge
+qt                        5.12.9               hda022c4_4    conda-forge
+readline                  8.1.2                h0f457ee_0    conda-forge
+requests                  2.28.0             pyhd8ed1ab_0    conda-forge
+requests-oauthlib         1.3.1              pyhd8ed1ab_0    conda-forge
+rsa                       4.8                pyhd8ed1ab_0    conda-forge
+scikit-image              0.18.2           py39hde0f152_0    conda-forge
+scikit-learn              0.24.2           py39h7c5d8c9_1    conda-forge
+scipy                     1.7.1            py39hee8e79c_0    conda-forge
+segmentation-models-pytorch 0.1.0                    pypi_0    pypi
+setuptools                59.8.0           py39hf3d152e_1    conda-forge
+shapely                   1.8.2            py39h4fbd0eb_2    conda-forge
+shellingham               1.4.0              pyh44b312d_0    conda-forge
+six                       1.15.0                   pypi_0    pypi
+sleef                     3.5.1                h9b69904_2    conda-forge
+smart_open                5.2.1              pyhd8ed1ab_0    conda-forge
+snappy                    1.1.9                hbd366e4_1    conda-forge
+spacy                     3.3.1            py39hac2352c_0    conda-forge
+spacy-legacy              3.0.9              pyhd8ed1ab_0    conda-forge
+spacy-loggers             1.0.2              pyhd8ed1ab_0    conda-forge
+sqlite                    3.38.5               h4ff8645_0    conda-forge
+srsly                     2.4.3            py39h5a03fae_1    conda-forge
+tensorboard               2.9.1              pyhd8ed1ab_0    conda-forge
+tensorboard-data-server   0.6.0            py39hd97740a_2    conda-forge
+tensorboard-plugin-wit    1.8.1              pyhd8ed1ab_0    conda-forge
+tensorflow-estimator      2.6.0                    pypi_0    pypi
+tensorflow-gpu            2.6.0                    pypi_0    pypi
+tensorflow-hub            0.12.0                   pypi_0    pypi
+termcolor                 1.1.0                    pypi_0    pypi
+thinc                     8.0.17           py39hac2352c_0    conda-forge
+threadpoolctl             3.1.0              pyh8a188c0_0    conda-forge
+tifffile                  2022.5.4           pyhd8ed1ab_0    conda-forge
+timm                      0.5.4                    pypi_0    pypi
+tk                        8.6.12               h27826a3_0    conda-forge
+toml                      0.10.2             pyhd8ed1ab_0    conda-forge
+toolz                     0.11.2             pyhd8ed1ab_0    conda-forge
+torchmetrics              0.5.0                    pypi_0    pypi
+torchvision               0.9.1           py39cuda111hcd06603_1_cuda    conda-forge
+tornado                   6.1              py39hb9d737c_3    conda-forge
+tqdm                      4.62.0             pyhd8ed1ab_0    conda-forge
+typer                     0.4.1              pyhd8ed1ab_0    conda-forge
+typing-extensions         3.7.4.3                  pypi_0    pypi
+tzdata                    2022a                h191b570_0    conda-forge
+unicodedata2              14.0.0           py39hb9d737c_1    conda-forge
+urllib3                   1.26.9             pyhd8ed1ab_0    conda-forge
+wasabi                    0.9.1              pyhd8ed1ab_0    conda-forge
+werkzeug                  2.1.2              pyhd8ed1ab_1    conda-forge
+wheel                     0.37.1             pyhd8ed1ab_0    conda-forge
+wrapt                     1.12.1                   pypi_0    pypi
+x264                      1!161.3030           h7f98852_1    conda-forge
+xorg-kbproto              1.0.7             h7f98852_1002    conda-forge
+xorg-libice               1.0.10               h7f98852_0    conda-forge
+xorg-libsm                1.2.3             hd9c2040_1000    conda-forge
+xorg-libx11               1.7.2                h7f98852_0    conda-forge
+xorg-libxau               1.0.9                h7f98852_0    conda-forge
+xorg-libxdmcp             1.1.3                h7f98852_0    conda-forge
+xorg-libxext              1.3.4                h7f98852_1    conda-forge
+xorg-libxrender           0.9.10            h7f98852_1003    conda-forge
+xorg-renderproto          0.11.1            h7f98852_1002    conda-forge
+xorg-xextproto            7.3.0             h7f98852_1002    conda-forge
+xorg-xproto               7.0.31            h7f98852_1007    conda-forge
+xz                        5.2.5                h516909a_1    conda-forge
+yaml                      0.2.5                h7f98852_2    conda-forge
+yapf                      0.32.0                   pypi_0    pypi
+yarl                      1.7.2            py39hb9d737c_2    conda-forge
+zfp                       0.5.5                h9c3ff4c_8    conda-forge
+zipp                      3.8.0              pyhd8ed1ab_0    conda-forge
+zlib                      1.2.12               h166bdaf_1    conda-forge
+zlib-ng                   2.0.6                h166bdaf_0    conda-forge
+zstd                      1.5.2                h8a70e8d_1    conda-forge
++ echo '######################################'
+######################################
++ echo 'Unpacking submission...'
+Unpacking submission...
++ unzip ./submission/submission.zip -d ./
+Archive:  ./submission/submission.zip
+  inflating: ./3model_ens.ipynb      
+   creating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train_0_1.png  
+   creating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/
+   creating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_2/
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_2/events.out.tfevents.1654331856.sheep.401007.2  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_2/mAP5_best.ckpt  
+ extracting: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_2/hparams.yaml  
+   creating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_1/
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_1/events.out.tfevents.1654329369.sheep.401007.1  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_1/mAP5_best.ckpt  
+ extracting: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_1/hparams.yaml  
+   creating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_3/
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_3/events.out.tfevents.1654334434.sheep.401007.3  
+ extracting: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_3/hparams.yaml  
+   creating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_4/
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_4/mAP5_best.ckpt  
+ extracting: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_4/hparams.yaml  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_4/events.out.tfevents.1654336922.sheep.401007.4  
+   creating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_0/
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_0/events.out.tfevents.1654326876.sheep.401007.0  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_0/mAP5_best.ckpt  
+ extracting: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_0/hparams.yaml  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/valid_0_1.png  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train_0_0.png  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train.log  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train_0_2.png  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/valid_0_0.png  
+  inflating: ./convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/valid_0_2.png  
+  inflating: ./individual_ids_new.json  
+  inflating: ./main.py               
+  inflating: ./main_b5_b7_cl_back.py  
+  inflating: ./main_back.py          
+  inflating: ./main_ens_sub_back.py  
+  inflating: ./main_feature_ens_back.py  
+   creating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/train_0_1.png  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/valid_0_1.png  
+   creating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/
+   creating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_2/
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_2/mAP5_best.ckpt  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_2/events.out.tfevents.1653876356.sheep.3389754.2  
+ extracting: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_2/hparams.yaml  
+   creating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_1/
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_1/events.out.tfevents.1653874522.sheep.3389754.1  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_1/mAP5_best.ckpt  
+ extracting: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_1/hparams.yaml  
+   creating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_3/
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_3/mAP5_best.ckpt  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_3/events.out.tfevents.1653878190.sheep.3389754.3  
+ extracting: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_3/hparams.yaml  
+   creating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_4/
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_4/events.out.tfevents.1653880032.sheep.3389754.4  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_4/mAP5_best.ckpt  
+ extracting: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_4/hparams.yaml  
+   creating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_0/
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_0/mAP5_best.ckpt  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_0/events.out.tfevents.1653872698.sheep.3389754.0  
+ extracting: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_0/hparams.yaml  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/train_0_0.png  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/train.log  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/train_0_2.png  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/valid_0_0.png  
+  inflating: ./tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/valid_0_2.png  
+   creating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train_0_1.png  
+   creating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/
+   creating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_2/
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_2/events.out.tfevents.1654109355.sheep.219195.2  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_2/mAP5_best.ckpt  
+ extracting: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_2/hparams.yaml  
+   creating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_1/
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_1/events.out.tfevents.1654107090.sheep.219195.1  
+ extracting: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_1/hparams.yaml  
+   creating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_3/
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_3/events.out.tfevents.1654111631.sheep.219195.3  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_3/mAP5_best.ckpt  
+ extracting: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_3/hparams.yaml  
+   creating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_4/
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_4/events.out.tfevents.1654113908.sheep.219195.4  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_4/mAP5_best.ckpt  
+ extracting: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_4/hparams.yaml  
+   creating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_0/
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_0/events.out.tfevents.1654104823.sheep.219195.0  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_0/mAP5_best.ckpt  
+ extracting: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_0/hparams.yaml  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/valid_0_1.png  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train_0_0.png  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train.log  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/train_0_2.png  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/valid_0_0.png  
+  inflating: ./tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/valid_0_2.png  
+  inflating: ./valid.log             
+  inflating: ./valid_sublike.ipynb   
+  inflating: ./valid_sublike_prob_ens-cl.ipynb  
+  inflating: ./valid_sublike_prob_ens.ipynb  
+   creating: ./whale_chen/
+  inflating: ./whale_chen/README.md  
+ extracting: ./whale_chen/dist_hwd_train.sh  
+   creating: ./whale_chen/models/
+  inflating: ./whale_chen/models/metric_learning.py  
+  inflating: ./whale_chen/models/dolg_models.py  
+  inflating: ./whale_chen/models/models.py  
+  inflating: ./whale_chen/models/hybrid_models.py  
+  inflating: ./whale_chen/models/layers.py  
+   creating: ./whale_chen/models/__pycache__/
+  inflating: ./whale_chen/models/__pycache__/layers.cpython-39.pyc  
+  inflating: ./whale_chen/models/__pycache__/hybrid_models.cpython-38.pyc  
+  inflating: ./whale_chen/models/__pycache__/metric_learning.cpython-39.pyc  
+  inflating: ./whale_chen/models/__pycache__/__init__.cpython-39.pyc  
+  inflating: ./whale_chen/models/__pycache__/models.cpython-38.pyc  
+  inflating: ./whale_chen/models/__pycache__/dolg_models.cpython-39.pyc  
+  inflating: ./whale_chen/models/__pycache__/dolg_models.cpython-38.pyc  
+  inflating: ./whale_chen/models/__pycache__/hybrid_models.cpython-39.pyc  
+  inflating: ./whale_chen/models/__pycache__/__init__.cpython-38.pyc  
+  inflating: ./whale_chen/models/__pycache__/metric_learning.cpython-38.pyc  
+  inflating: ./whale_chen/models/__pycache__/models.cpython-39.pyc  
+  inflating: ./whale_chen/models/__pycache__/layers.cpython-38.pyc  
+  inflating: ./whale_chen/models/__init__.py  
+   creating: ./whale_chen/.git/
+  inflating: ./whale_chen/.git/index  
+   creating: ./whale_chen/.git/logs/
+  inflating: ./whale_chen/.git/logs/HEAD  
+   creating: ./whale_chen/.git/logs/refs/
+   creating: ./whale_chen/.git/logs/refs/remotes/
+   creating: ./whale_chen/.git/logs/refs/remotes/origin/
+  inflating: ./whale_chen/.git/logs/refs/remotes/origin/HEAD  
+  inflating: ./whale_chen/.git/logs/refs/remotes/origin/ckpt_220529  
+  inflating: ./whale_chen/.git/logs/refs/remotes/origin/master  
+   creating: ./whale_chen/.git/logs/refs/heads/
+  inflating: ./whale_chen/.git/logs/refs/heads/master  
+  inflating: ./whale_chen/.git/config  
+  inflating: ./whale_chen/.git/FETCH_HEAD  
+  inflating: ./whale_chen/.git/description  
+   creating: ./whale_chen/.git/hooks/
+  inflating: ./whale_chen/.git/hooks/applypatch-msg.sample  
+  inflating: ./whale_chen/.git/hooks/fsmonitor-watchman.sample  
+  inflating: ./whale_chen/.git/hooks/pre-applypatch.sample  
+  inflating: ./whale_chen/.git/hooks/prepare-commit-msg.sample  
+  inflating: ./whale_chen/.git/hooks/pre-commit.sample  
+  inflating: ./whale_chen/.git/hooks/pre-receive.sample  
+  inflating: ./whale_chen/.git/hooks/post-update.sample  
+  inflating: ./whale_chen/.git/hooks/pre-push.sample  
+  inflating: ./whale_chen/.git/hooks/pre-merge-commit.sample  
+  inflating: ./whale_chen/.git/hooks/commit-msg.sample  
+  inflating: ./whale_chen/.git/hooks/pre-rebase.sample  
+  inflating: ./whale_chen/.git/hooks/update.sample  
+ extracting: ./whale_chen/.git/HEAD  
+   creating: ./whale_chen/.git/branches/
+ extracting: ./whale_chen/.git/ORIG_HEAD  
+   creating: ./whale_chen/.git/refs/
+   creating: ./whale_chen/.git/refs/remotes/
+   creating: ./whale_chen/.git/refs/remotes/origin/
+ extracting: ./whale_chen/.git/refs/remotes/origin/HEAD  
+ extracting: ./whale_chen/.git/refs/remotes/origin/ckpt_220529  
+ extracting: ./whale_chen/.git/refs/remotes/origin/master  
+   creating: ./whale_chen/.git/refs/heads/
+ extracting: ./whale_chen/.git/refs/heads/master  
+   creating: ./whale_chen/.git/refs/tags/
+  inflating: ./whale_chen/.git/packed-refs  
+   creating: ./whale_chen/.git/objects/
+   creating: ./whale_chen/.git/objects/07/
+ extracting: ./whale_chen/.git/objects/07/3cb0ae05104ea84ab5c52b1553a70a605d7df0  
+   creating: ./whale_chen/.git/objects/8a/
+ extracting: ./whale_chen/.git/objects/8a/dca3b8c60406a9e62e03347cc87e3c54e6f3c0  
+   creating: ./whale_chen/.git/objects/d4/
+ extracting: ./whale_chen/.git/objects/d4/8b65fc4ee730312b0e121e2788c647cabd6626  
+   creating: ./whale_chen/.git/objects/47/
+ extracting: ./whale_chen/.git/objects/47/059f81e5ff4f61c7dc2ecaff9666c5ef918857  
+ extracting: ./whale_chen/.git/objects/47/820667285ec9e584308c28b66cd501d9020016  
+   creating: ./whale_chen/.git/objects/42/
+ extracting: ./whale_chen/.git/objects/42/54a262dc527950deeaabe5cd2199696ee0f26c  
+ extracting: ./whale_chen/.git/objects/42/526b37b58741cde4a1856c18fc14cd89e21bb1  
+   creating: ./whale_chen/.git/objects/41/
+ extracting: ./whale_chen/.git/objects/41/0d859cfc72ce9fd9bab46d8ab3176aeedfb801  
+   creating: ./whale_chen/.git/objects/57/
+ extracting: ./whale_chen/.git/objects/57/9731f1b0356acb0fe89c587e050435ce58b2d7  
+ extracting: ./whale_chen/.git/objects/57/3d68ba5946c3fda5abfe6fd676ed6562c03cb2  
+   creating: ./whale_chen/.git/objects/36/
+ extracting: ./whale_chen/.git/objects/36/f4c2fe28317323c30290925d7a0b73ce4dd4d7  
+   creating: ./whale_chen/.git/objects/83/
+ extracting: ./whale_chen/.git/objects/83/470fe8f1995193caf1e767e2e1f1b577947b70  
+   creating: ./whale_chen/.git/objects/e0/
+ extracting: ./whale_chen/.git/objects/e0/e19fbb9f4faf0240034e5a4602451778b5663c  
+   creating: ./whale_chen/.git/objects/9b/
+ extracting: ./whale_chen/.git/objects/9b/d2ce94759fd5379433483bdd9bea4436597cff  
+ extracting: ./whale_chen/.git/objects/9b/5aef517175c6877174834cdfbcdf777781bddf  
+ extracting: ./whale_chen/.git/objects/9b/d9cdd535cedd0605799145c9ef46bbc615af2d  
+   creating: ./whale_chen/.git/objects/0e/
+ extracting: ./whale_chen/.git/objects/0e/dddecedc3d8e167cc3553534dc7ee42e265fdc  
+   creating: ./whale_chen/.git/objects/37/
+ extracting: ./whale_chen/.git/objects/37/6a61172f44cca08254c6a3dcc978e88fcc8dcf  
+   creating: ./whale_chen/.git/objects/27/
+ extracting: ./whale_chen/.git/objects/27/c5a3df97c3a017508dab9f59a3ad66309c16e3  
+   creating: ./whale_chen/.git/objects/10/
+ extracting: ./whale_chen/.git/objects/10/5b0c6a8afe0dc7d27d06443aba05c2ba83dff3  
+   creating: ./whale_chen/.git/objects/1e/
+ extracting: ./whale_chen/.git/objects/1e/624ada2f62252b637fe3dc8cddb9fb87445c29  
+ extracting: ./whale_chen/.git/objects/1e/07f180b6736eb73e6f0a9853d69cc4e1099a8d  
+   creating: ./whale_chen/.git/objects/a6/
+ extracting: ./whale_chen/.git/objects/a6/4ba87b4001cd37936428f72866468450ed5f17  
+   creating: ./whale_chen/.git/objects/9a/
+ extracting: ./whale_chen/.git/objects/9a/7914166005faf66225e3fa746c20fd494adc70  
+   creating: ./whale_chen/.git/objects/c9/
+ extracting: ./whale_chen/.git/objects/c9/6ae457c8343f081189b788cc03999379d96a54  
+ extracting: ./whale_chen/.git/objects/c9/2e57c529550b4a17826ef63633814f53e39ca1  
+   creating: ./whale_chen/.git/objects/93/
+ extracting: ./whale_chen/.git/objects/93/3d5a036a12bf45b2171aa8f7aa78c649ec196f  
+   creating: ./whale_chen/.git/objects/7e/
+ extracting: ./whale_chen/.git/objects/7e/54111a799b4b09d2772588254b2068a0f8c246  
+   creating: ./whale_chen/.git/objects/b4/
+ extracting: ./whale_chen/.git/objects/b4/d2ac5b79e40e1ee41b68ddf75576129ee315fa  
+   creating: ./whale_chen/.git/objects/15/
+ extracting: ./whale_chen/.git/objects/15/32034a8e8cbe3a59e382f2e780ecd0509040e7  
+   creating: ./whale_chen/.git/objects/ac/
+ extracting: ./whale_chen/.git/objects/ac/82103ec14c0031ed15dc8525de5caa4327ad73  
+   creating: ./whale_chen/.git/objects/92/
+ extracting: ./whale_chen/.git/objects/92/90bfcf11d14c2b74771ebcae1ccbcdac33285a  
+ extracting: ./whale_chen/.git/objects/92/7fa41b90cf3b866596b9fe2b448b347f7784a7  
+ extracting: ./whale_chen/.git/objects/92/c7c0cf2acbe2d91ff7c0b28ddc1128d4e00400  
+ extracting: ./whale_chen/.git/objects/92/c4d66009bc05c347d2183c6f485a127b547317  
+   creating: ./whale_chen/.git/objects/26/
+ extracting: ./whale_chen/.git/objects/26/ba6c523427099880dc2f9d9659da96ab7f5475  
+   creating: ./whale_chen/.git/objects/2a/
+ extracting: ./whale_chen/.git/objects/2a/73537aadb70ff1f8509e3a0b7b46f0c1494b23  
+   creating: ./whale_chen/.git/objects/69/
+ extracting: ./whale_chen/.git/objects/69/3a935d9bc57ebfabb5fe653b7818adb871289f  
+   creating: ./whale_chen/.git/objects/b6/
+ extracting: ./whale_chen/.git/objects/b6/06133496dbe6a2c22756a8b6e532074ef95eb0  
+ extracting: ./whale_chen/.git/objects/b6/4ea8d4f52a41a87310ff41d7c6bc1e6f29893f  
+   creating: ./whale_chen/.git/objects/fa/
+ extracting: ./whale_chen/.git/objects/fa/74d6d1c6124eee7a769394c88ddb3c3baeefe0  
+   creating: ./whale_chen/.git/objects/f7/
+ extracting: ./whale_chen/.git/objects/f7/bb607b067b27d42b6a24b4ab858a88687ad5d6  
+   creating: ./whale_chen/.git/objects/8e/
+ extracting: ./whale_chen/.git/objects/8e/23599a182dd1dd4a8881c5f2fce64b12cb41c4  
+   creating: ./whale_chen/.git/objects/8d/
+ extracting: ./whale_chen/.git/objects/8d/d560a3bcaff0d8fe465666b9aba9ac5c7cbc2c  
+   creating: ./whale_chen/.git/objects/25/
+ extracting: ./whale_chen/.git/objects/25/4715379c9c8290eb032cb6a872bd4ea3c5ac78  
+ extracting: ./whale_chen/.git/objects/25/447445a2f055d14bb8b436655e1db9286de9cd  
+   creating: ./whale_chen/.git/objects/05/
+ extracting: ./whale_chen/.git/objects/05/c91cffe8c9b6ac7b397351c7f44572eccf1d51  
+   creating: ./whale_chen/.git/objects/5a/
+ extracting: ./whale_chen/.git/objects/5a/adfd9b8020f9b635938ca6dacc50fa650f389f  
+ extracting: ./whale_chen/.git/objects/5a/5c30a484995b6b7971c9fcf4d08186b0c0c7e8  
+   creating: ./whale_chen/.git/objects/ae/
+ extracting: ./whale_chen/.git/objects/ae/b4b1145de765c88a2beed2aefa6cf377be768f  
+ extracting: ./whale_chen/.git/objects/ae/3d6f74b68d416c5e3851ec101424c1d8131f15  
+ extracting: ./whale_chen/.git/objects/ae/7cb5579a1e46c2a954f3c184be6cdedfb11517  
+   creating: ./whale_chen/.git/objects/08/
+ extracting: ./whale_chen/.git/objects/08/b13f187beabfa09dfb228365db8551fe2bb493  
+   creating: ./whale_chen/.git/objects/7d/
+ extracting: ./whale_chen/.git/objects/7d/2b4da49153690c2edccdd7bc246a0740dfd8f8  
+   creating: ./whale_chen/.git/objects/44/
+ extracting: ./whale_chen/.git/objects/44/b7131127baedc07dac77e2ae0e27e4150f07e6  
+   creating: ./whale_chen/.git/objects/1d/
+ extracting: ./whale_chen/.git/objects/1d/4fde2b632707ebca3d250db2cb3b39f31d5ee7  
+   creating: ./whale_chen/.git/objects/e3/
+ extracting: ./whale_chen/.git/objects/e3/8054180340666c5aab76de9a2607bbbfdf3e7a  
+   creating: ./whale_chen/.git/objects/8f/
+ extracting: ./whale_chen/.git/objects/8f/8c8c2c28e203ad6a0762b83bc8027504ddd3de  
+   creating: ./whale_chen/.git/objects/18/
+ extracting: ./whale_chen/.git/objects/18/4115ee07d9d9a04d3afc9695f3aeb1fbf07c0a  
+   creating: ./whale_chen/.git/objects/76/
+ extracting: ./whale_chen/.git/objects/76/02e266fc3f82dc9b3b8fe0dab759db71342406  
+ extracting: ./whale_chen/.git/objects/76/d4c771a890e3f9a594894ead1ba6b3b39fd9f5  
+   creating: ./whale_chen/.git/objects/ca/
+ extracting: ./whale_chen/.git/objects/ca/67d8e90a19579ea4af5319a7a05d2fd2087a1e  
+   creating: ./whale_chen/.git/objects/5e/
+ extracting: ./whale_chen/.git/objects/5e/de6e2ee3e41449a90dab1120e6670e63dcfb85  
+   creating: ./whale_chen/.git/objects/be/
+ extracting: ./whale_chen/.git/objects/be/c6b75c93ba8c6617e961c0c567d423f06a4519  
+   creating: ./whale_chen/.git/objects/bd/
+ extracting: ./whale_chen/.git/objects/bd/e326ce55865ed5f7be49549840ba326abe91c7  
+   creating: ./whale_chen/.git/objects/cb/
+ extracting: ./whale_chen/.git/objects/cb/4a2dc88c0e7312e7970457fb68726f5aec374c  
+   creating: ./whale_chen/.git/objects/d6/
+ extracting: ./whale_chen/.git/objects/d6/e689ea54fb5d522a9e25f95daf497b82dacac4  
+   creating: ./whale_chen/.git/objects/49/
+ extracting: ./whale_chen/.git/objects/49/3f331e0fb4fa6aaa2a9259057190e5f066af12  
+ extracting: ./whale_chen/.git/objects/49/7a3b50161b408559af7f511cd21a0ea79ec99d  
+ extracting: ./whale_chen/.git/objects/49/18607a3e40960028e8a8fc3868beebc3f86c94  
+   creating: ./whale_chen/.git/objects/02/
+ extracting: ./whale_chen/.git/objects/02/8dc4aee021f27a347c9d59fd510125aef2fad5  
+   creating: ./whale_chen/.git/objects/67/
+ extracting: ./whale_chen/.git/objects/67/d50778e8a751b57cb738690657d115427ce140  
+   creating: ./whale_chen/.git/objects/3f/
+ extracting: ./whale_chen/.git/objects/3f/13ffcdd9915e7df7b3c6f74661137eecebc948  
+   creating: ./whale_chen/.git/objects/4f/
+ extracting: ./whale_chen/.git/objects/4f/924e7cd722b20269ff8a796a94d0f8ecaeae01  
+   creating: ./whale_chen/.git/objects/46/
+ extracting: ./whale_chen/.git/objects/46/3f449684740bd399575731c176f074de23a24d  
+   creating: ./whale_chen/.git/objects/c3/
+ extracting: ./whale_chen/.git/objects/c3/73fb308dd00bedef96ec0b1d4ed82d77eb7194  
+   creating: ./whale_chen/.git/objects/7b/
+ extracting: ./whale_chen/.git/objects/7b/67217692b890973e3759df1727e41482e50afb  
+ extracting: ./whale_chen/.git/objects/7b/d5670b21327a81fafe54d31e8c55b074fd93ac  
+   creating: ./whale_chen/.git/objects/b9/
+ extracting: ./whale_chen/.git/objects/b9/40877cbc7ea7b18722e06e27b2e358314cc381  
+   creating: ./whale_chen/.git/objects/9f/
+ extracting: ./whale_chen/.git/objects/9f/3d333c9c4c6864bbecf5956d3aef2b5b7fc8d7  
+ extracting: ./whale_chen/.git/objects/9f/7c914e0cf3aff7e85b6c0a72b78607e5b031d1  
+   creating: ./whale_chen/.git/objects/52/
+ extracting: ./whale_chen/.git/objects/52/7f72199050d8372a15d47bc85e748252eb9f5f  
+   creating: ./whale_chen/.git/objects/24/
+ extracting: ./whale_chen/.git/objects/24/3366d683fc5d0b66e19919a12aa5d7204c422b  
+   creating: ./whale_chen/.git/objects/b2/
+ extracting: ./whale_chen/.git/objects/b2/3c566d4e08b0ad482b4dee5ac399f09145306e  
+   creating: ./whale_chen/.git/objects/98/
+ extracting: ./whale_chen/.git/objects/98/58359d6f2edd223eb9ddaaee38ca16c5ca6559  
+   creating: ./whale_chen/.git/objects/6e/
+ extracting: ./whale_chen/.git/objects/6e/d2b953b4d8b09f41dc6aba31f88914cd383ac4  
+   creating: ./whale_chen/.git/objects/a3/
+ extracting: ./whale_chen/.git/objects/a3/1fb0885fa14ee8c993e6f08703af128ba72330  
+ extracting: ./whale_chen/.git/objects/a3/fee0ec836add5dc8e28594b4f75e728cc7c776  
+   creating: ./whale_chen/.git/objects/04/
+ extracting: ./whale_chen/.git/objects/04/a70a1c81f5e72527cc0a1be6d61fe1d0ddd586  
+   creating: ./whale_chen/.git/objects/9d/
+ extracting: ./whale_chen/.git/objects/9d/c6cab77c5c1c98749d6c1be1a6ec1cec6a29ab  
+ extracting: ./whale_chen/.git/objects/9d/002695bc82d595875d03cf76fde9dff071d3fb  
+   creating: ./whale_chen/.git/objects/19/
+ extracting: ./whale_chen/.git/objects/19/022fc53d4bb07af6003f2390276b732e6d3c32  
+   creating: ./whale_chen/.git/objects/40/
+ extracting: ./whale_chen/.git/objects/40/a09bbe2f1a8cc123d4e1cec279bae4072f196b  
+   creating: ./whale_chen/.git/objects/d0/
+ extracting: ./whale_chen/.git/objects/d0/32bb00cbc2e9baacac7ce357ff7ca51c29114d  
+   creating: ./whale_chen/.git/objects/4d/
+ extracting: ./whale_chen/.git/objects/4d/e322ccf8d086358c5ed43ad5bc16b68a54f498  
+   creating: ./whale_chen/.git/objects/4a/
+ extracting: ./whale_chen/.git/objects/4a/bfc3fc87a528754143d484573d60d7e3ba4bec  
+   creating: ./whale_chen/.git/objects/a1/
+ extracting: ./whale_chen/.git/objects/a1/c0569a805a3bea276b24a41b5c5d67a844179a  
+   creating: ./whale_chen/.git/objects/b0/
+ extracting: ./whale_chen/.git/objects/b0/49b8506687fc2501572cbffb3dc7e9e173ceff  
+   creating: ./whale_chen/.git/objects/71/
+ extracting: ./whale_chen/.git/objects/71/9afe556df6d9cdb5fa36fd6b0c0949cdbd50a9  
+   creating: ./whale_chen/.git/objects/2b/
+ extracting: ./whale_chen/.git/objects/2b/9c3ca0d8af87b2aa081022a5abe36b36ff893b  
+   creating: ./whale_chen/.git/objects/43/
+ extracting: ./whale_chen/.git/objects/43/a88dee951432659f953b9fa643f1960d3be4ef  
+ extracting: ./whale_chen/.git/objects/43/c434c0d35b357b327fd612b1f1d5ae3f94e328  
+ extracting: ./whale_chen/.git/objects/43/3aebfce85b5c72389138ed8e9348450817285d  
+   creating: ./whale_chen/.git/objects/5c/
+ extracting: ./whale_chen/.git/objects/5c/25e01761566cfb2f4f5b34aa4c7669112b48a8  
+   creating: ./whale_chen/.git/objects/ed/
+ extracting: ./whale_chen/.git/objects/ed/17b0576363959e7f3cdb3acf74b0c057b0b06e  
+   creating: ./whale_chen/.git/objects/31/
+ extracting: ./whale_chen/.git/objects/31/cc856f80672cf91e07fe87a56c648415e9309e  
+   creating: ./whale_chen/.git/objects/cf/
+ extracting: ./whale_chen/.git/objects/cf/ff83bacc77dc0165764cb8011c17960c3fbe25  
+ extracting: ./whale_chen/.git/objects/cf/5c129e7794ae0efec7e8d6ea7fec1689aa687a  
+   creating: ./whale_chen/.git/objects/de/
+ extracting: ./whale_chen/.git/objects/de/7b7e5b4e8426a513e8643269915994ccdef97b  
+ extracting: ./whale_chen/.git/objects/de/f74113150ecc258f50b21ae33b2a32d68fdc29  
+   creating: ./whale_chen/.git/objects/78/
+ extracting: ./whale_chen/.git/objects/78/ecf2adb538bf9fa999b41d5ec8cd98748ecee5  
+   creating: ./whale_chen/.git/objects/d8/
+ extracting: ./whale_chen/.git/objects/d8/221511336006feed702e6bca4710e189a59761  
+   creating: ./whale_chen/.git/objects/0c/
+ extracting: ./whale_chen/.git/objects/0c/1c813a60a0d0b8d950e5f9950bcc21c1580b40  
+   creating: ./whale_chen/.git/objects/e7/
+ extracting: ./whale_chen/.git/objects/e7/eca46b073aea062ac840447189da19ddc2665f  
+   creating: ./whale_chen/.git/objects/00/
+ extracting: ./whale_chen/.git/objects/00/b9ac1a14355f69002cbc4e30dda6d42707c0e8  
+ extracting: ./whale_chen/.git/objects/00/184c54d7f52d03bb2debee554c6f549995deae  
+   creating: ./whale_chen/.git/objects/39/
+ extracting: ./whale_chen/.git/objects/39/b44e0d593c2aeb8a4c6934d82d8eaaf10745a9  
+   creating: ./whale_chen/.git/objects/ea/
+ extracting: ./whale_chen/.git/objects/ea/544c7f815e1ff892608bd15cc67bd414731207  
+ extracting: ./whale_chen/.git/objects/ea/321343f19be67fa54c2151abbc023c344202da  
+ extracting: ./whale_chen/.git/objects/ea/41c4471882b6715e9c488965b1a8100ee18dea  
+   creating: ./whale_chen/.git/objects/65/
+ extracting: ./whale_chen/.git/objects/65/73f140ab71e6f550c8e6bcb6a483a3ed0096db  
+   creating: ./whale_chen/.git/objects/fe/
+ extracting: ./whale_chen/.git/objects/fe/de793384d19716aadc6b06927d4fc0babc1364  
+   creating: ./whale_chen/.git/objects/a9/
+ extracting: ./whale_chen/.git/objects/a9/01956c8b7521aedc6bd9ad7b41facb008b21cd  
+ extracting: ./whale_chen/.git/objects/a9/57c002ef03bcab34ff57f26e9ed2d0b4144abb  
+   creating: ./whale_chen/.git/objects/pack/
+   creating: ./whale_chen/.git/objects/0d/
+ extracting: ./whale_chen/.git/objects/0d/e9afb8153604f6c8056418d079ead758d3c3ed  
+   creating: ./whale_chen/.git/objects/f5/
+ extracting: ./whale_chen/.git/objects/f5/d8afbbefa298f11dde125dfed2d1943f9f7f2d  
+ extracting: ./whale_chen/.git/objects/f5/e5cb1bceb5609f828705f15c3745f3ba5f41ac  
+   creating: ./whale_chen/.git/objects/info/
+   creating: ./whale_chen/.git/objects/51/
+ extracting: ./whale_chen/.git/objects/51/009bcae2ad5c0bec44a9d5974effb7c514c229  
+   creating: ./whale_chen/.git/objects/45/
+ extracting: ./whale_chen/.git/objects/45/4c0d0e45b1a65e9736f50b51bc736302bab53b  
+   creating: ./whale_chen/.git/objects/f6/
+ extracting: ./whale_chen/.git/objects/f6/63463be856bc9ece60aaf226abe29257c8951b  
+   creating: ./whale_chen/.git/objects/2c/
+ extracting: ./whale_chen/.git/objects/2c/c92144c6fc881afdeab5c12becf973266e2707  
+   creating: ./whale_chen/.git/objects/b5/
+ extracting: ./whale_chen/.git/objects/b5/eff991c3fb62e7ace2eaf89915608d5f4f003c  
+ extracting: ./whale_chen/.git/objects/b5/541e98e3bee20b920a55edd505ae8b37942674  
+   creating: ./whale_chen/.git/objects/96/
+ extracting: ./whale_chen/.git/objects/96/272c10f61b24bb75e9e871b318529c901eab29  
+   creating: ./whale_chen/.git/objects/ef/
+ extracting: ./whale_chen/.git/objects/ef/850d1716310af12e5ee9848d9582954a0bda93  
+ extracting: ./whale_chen/.git/objects/ef/89e573bfa955054b6c90ac11e76af8f8f726ba  
+ extracting: ./whale_chen/.git/objects/ef/7325cacef8d1052895a9804876ed3922f77523  
+   creating: ./whale_chen/.git/objects/c8/
+ extracting: ./whale_chen/.git/objects/c8/7ac8c0375486ea27a50a148fe28ea195d069e8  
+ extracting: ./whale_chen/.git/objects/c8/fc21de23ed92cc2d39686cb473a3ad9d3487e0  
+   creating: ./whale_chen/.git/objects/56/
+ extracting: ./whale_chen/.git/objects/56/000b88f0ae6982a559889ac40d358880891200  
+ extracting: ./whale_chen/.git/objects/56/e6092b80c58f0b71997ff5321801edeee18546  
+   creating: ./whale_chen/.git/objects/0f/
+ extracting: ./whale_chen/.git/objects/0f/77acac358358aa03ed2ce5df2f42b27174c6e5  
+ extracting: ./whale_chen/.git/objects/0f/6c908a0586fb7381e4b9e41930c5e4610ac87b  
+   creating: ./whale_chen/.git/objects/ee/
+ extracting: ./whale_chen/.git/objects/ee/2e18e2c5252da7b0684b268d7a36ee0709d2be  
+   creating: ./whale_chen/.git/objects/c1/
+ extracting: ./whale_chen/.git/objects/c1/812c76e0196320cce436264cd86377f618821e  
+ extracting: ./whale_chen/.git/objects/c1/353ec4313e272852d0df7f2247729e4f0b6d7d  
+   creating: ./whale_chen/.git/objects/23/
+ extracting: ./whale_chen/.git/objects/23/fa9e5018f2aed7a2e5f23028e6d6a0eebafe32  
+   creating: ./whale_chen/.git/objects/35/
+ extracting: ./whale_chen/.git/objects/35/f860da7fd0b80165d6a1dedc81acba98512c54  
+   creating: ./whale_chen/.git/objects/66/
+ extracting: ./whale_chen/.git/objects/66/471519ef5b50ab0eca77caeb3389d297f4f813  
+   creating: ./whale_chen/.git/objects/e6/
+ extracting: ./whale_chen/.git/objects/e6/32775b774a7b548b0103e07919f6bed557447d  
+   creating: ./whale_chen/.git/objects/2f/
+ extracting: ./whale_chen/.git/objects/2f/de36442537b48883f773c4bfe3108b85a75bde  
+   creating: ./whale_chen/.git/objects/72/
+ extracting: ./whale_chen/.git/objects/72/5353a2358268d2f3de2b3d6fbd68c4031a4651  
+ extracting: ./whale_chen/.git/objects/72/4e2ac96cb51f65e1f55884c58bbd9fa116edf6  
+   creating: ./whale_chen/.git/info/
+  inflating: ./whale_chen/.git/info/exclude  
+   creating: ./whale_chen/data/
+  inflating: ./whale_chen/data/augment.py  
+  inflating: ./whale_chen/data/dataset.py  
+  inflating: ./whale_chen/data/fmix.py  
+   creating: ./whale_chen/data/__pycache__/
+  inflating: ./whale_chen/data/__pycache__/augment.cpython-39.pyc  
+  inflating: ./whale_chen/data/__pycache__/dataset.cpython-38.pyc  
+  inflating: ./whale_chen/data/__pycache__/fmix.cpython-39.pyc  
+  inflating: ./whale_chen/data/__pycache__/dataset.cpython-39.pyc  
+  inflating: ./whale_chen/data/__pycache__/__init__.cpython-39.pyc  
+  inflating: ./whale_chen/data/__pycache__/augment.cpython-38.pyc  
+  inflating: ./whale_chen/data/__pycache__/__init__.cpython-38.pyc  
+  inflating: ./whale_chen/data/__pycache__/fmix.cpython-38.pyc  
+  inflating: ./whale_chen/data/__init__.py  
+  inflating: ./whale_chen/LICENSE    
+   creating: ./whale_chen/loss/
+  inflating: ./whale_chen/loss/loss_factory.py  
+  inflating: ./whale_chen/loss/cb_loss.py  
+  inflating: ./whale_chen/loss/triplet_loss.py  
+  inflating: ./whale_chen/loss/lovasz_losses.py  
+  inflating: ./whale_chen/loss/bi_tempered_loss.py  
+  inflating: ./whale_chen/loss/cosine_loss.py  
+  inflating: ./whale_chen/loss/taylor_loss.py  
+   creating: ./whale_chen/loss/__pycache__/
+  inflating: ./whale_chen/loss/__pycache__/triplet_loss.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/cross_entropy.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/loss_factory.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/cosine_loss.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/sce_loss.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/__init__.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/bi_tempered_loss.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/cb_loss.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/taylor_loss.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/taylor_loss.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/bi_tempered_loss.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/loss_factory.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/__init__.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/cosine_loss.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/cross_entropy.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/lovasz_losses.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/sce_loss.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/triplet_loss.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__pycache__/lovasz_losses.cpython-38.pyc  
+  inflating: ./whale_chen/loss/__pycache__/cb_loss.cpython-39.pyc  
+  inflating: ./whale_chen/loss/__init__.py  
+  inflating: ./whale_chen/loss/cross_entropy.py  
+  inflating: ./whale_chen/loss/sce_loss.py  
+  inflating: ./whale_chen/pl_hwd_train.py  
+   creating: ./whale_chen/__pycache__/
+  inflating: ./whale_chen/__pycache__/utils.cpython-39.pyc  
+  inflating: ./whale_chen/__pycache__/utils.cpython-38.pyc  
+  inflating: ./whale_chen/utils.py   
++ ls -alh
+total 844K
+drwxr-xr-x 1 appuser appuser 4.0K Jun 30 15:02 .
+drwxr-xr-x 1 root    root    4.0K Jun 30 14:59 ..
+-rw-r--r-- 1 appuser appuser 216K Jun 30 13:04 3model_ens.ipynb
+drwxrwxr-x 3 appuser appuser 4.0K Jun 30 13:04 convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp
+drwxrwxrwx 2 appuser appuser 4.0K Jun 30 14:59 data
+-rw-r--r-- 1 appuser appuser  772 Jun 22 15:11 entrypoint.sh
+-rw-r--r-- 1 appuser appuser  13K Jun 30 13:04 individual_ids_new.json
+-rw-r--r-- 1 appuser appuser  19K Jun 30 13:18 main.py
+-rw-r--r-- 1 appuser appuser  18K Jun 30 13:04 main_b5_b7_cl_back.py
+-rw-rw-r-- 1 appuser appuser 1.6K Jun 30 13:04 main_back.py
+-rw-r--r-- 1 appuser appuser  11K Jun 30 13:04 main_ens_sub_back.py
+-rw-r--r-- 1 appuser appuser 9.9K Jun 30 13:04 main_feature_ens_back.py
+drwxr-xr-x 2 appuser appuser 4.0K Jun 22 15:23 predictions
+drwxrwxrwx 2 appuser appuser 4.0K Jun 30 14:59 submission
+drwxr-xr-x 2 appuser appuser 4.0K Jun 22 15:23 tests
+drwxrwxr-x 3 appuser appuser 4.0K Jun 30 13:04 tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp
+drwxrwxr-x 3 appuser appuser 4.0K Jun 30 13:04 tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp
+-rw-r--r-- 1 appuser appuser 8.9K Jun 30 13:04 valid.log
+-rw-r--r-- 1 appuser appuser 222K Jun 30 13:04 valid_sublike.ipynb
+-rw-r--r-- 1 appuser appuser  56K Jun 30 13:04 valid_sublike_prob_ens-cl.ipynb
+-rw-r--r-- 1 appuser appuser 216K Jun 30 13:04 valid_sublike_prob_ens.ipynb
+drwxrwxr-x 7 appuser appuser 4.0K Jun 30 13:04 whale_chen
++ '[' -f main.py ']'
++ echo 'Running code submission with Python'
+Running code submission with Python
++ conda run --no-capture-output -n condaenv python main.py
+/code_execution
+[ ! ] Start is : 2022-06-30, 15:02:54
+convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_1/mAP5_best.ckpt
+convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_0/mAP5_best.ckpt
+convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_4/mAP5_best.ckpt
+convnext_large_folds_aug5_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/convnext_large/fold_2/mAP5_best.ckpt
+[ ! ] Now is : 2022-06-30, 16:50:22
+tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_1/mAP5_best.ckpt
+tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_0/mAP5_best.ckpt
+tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_4/mAP5_best.ckpt
+tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_2/mAP5_best.ckpt
+tf_efficientnet_b5_ns_folds_aug_384_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b5_ns/fold_3/mAP5_best.ckpt
+[ ! ] Now is : 2022-06-30, 17:15:05
+tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_0/mAP5_best.ckpt
+tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_4/mAP5_best.ckpt
+tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_2/mAP5_best.ckpt
+tf_efficientnet_b7_ns_folds_aug_320_50e_Adam_GradualWarmupSchedulerV2lr0.0003_LabelSmoothingCrossEntropy_ls0.2_arcface_margin0.3_dropout0.4_3head_yolo_x6_public_ensemble_fl_rp/tf_efficientnet_b7_ns/fold_3/mAP5_best.ckpt
+[ ! ] Time used: 9471.154330015182, now is : 2022-06-30, 17:40:46
++ echo '... finished'
+... finished
++ echo '================ END ================'
+================ END ================
++ cp /code_execution/submission/log.txt /tmp/log
++ exit 0
