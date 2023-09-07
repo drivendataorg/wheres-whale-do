@@ -3,6 +3,7 @@
 ![Banner Image](https://drivendata-public-assets.s3.amazonaws.com/boem-beluga-pod.jpeg)
 
 ## Goal of the Competition
+
 **The goal of [this challenge](https://www.drivendata.org/competitions/96/beluga-whales/page/478/) is to help wildlife researchers accurately identify endangered Cook Inlet beluga whale individuals from photographic images.** Specifically, the task is [query ranking](https://en.wikipedia.org/wiki/Ranking_(information_retrieval)) for images of individual whales given a query image against an image database, which is a key step in the full photo-identification process.
 
 This was a code execution challenge, which means that participants packaged the files needed to perform inference and submitted them for containerized execution.  
@@ -18,7 +19,7 @@ Processing and analyzing new survey images of Cook Inlet belugas is largely manu
 
 ## What's in this Repository
 
-This repository contains `training` and `inference` code from winning competitors in the [Where's Whale-do?](https://www.drivendata.org/competitions/96/beluga-whales/page/478/) challenge. Inference was performed in the execution runtime, which is specified [runtime repository](https://github.com/drivendataorg/boem-belugas-runtime). Training of models is generally done using participant's own resources.
+This repository contains `training` and `inference` code from winning competitors in the [Where's Whale-do?](https://www.drivendata.org/competitions/96/beluga-whales/) challenge. Code for all winning solutions are open source under the MIT License. Inference was performed in the execution runtime, which is specified [runtime repository](https://github.com/drivendataorg/boem-belugas-runtime). Training of models is generally done using participant's own resources. 
 
 Additional solution documentation can be found in the `reports` folder inside the directory for each submission.
 
@@ -35,8 +36,8 @@ Place |Team or User | Public Score | Private Score | Summary of Model | Bonus Ro
 
 ### Additional Information
 
-* [Where's Whale-do Challenge](https://www.drivendata.org/competitions/96/beluga-whales/page/478/)
+* [Where's Whale-do Challenge](https://www.drivendata.org/competitions/96/beluga-whales/)
 * [Benchmark Blog Post](https://drivendata.co/blog/belugas-benchmark)
-* [Winners Blog Post](TBD)
+* [Winners Blog Post](https://drivendata.co/blog/belugas-winners)
 
 Winning code for other DrivenData competitions is available in the [competition-winners repository](https://github.com/drivendataorg/competition-winners).
