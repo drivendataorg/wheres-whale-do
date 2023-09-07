@@ -4,7 +4,7 @@
 
 ## Goal of the Competition
 
-**The goal of [this challenge](https://www.drivendata.org/competitions/96/beluga-whales/page/478/) is to help wildlife researchers accurately identify endangered Cook Inlet beluga whale individuals from photographic images.** Specifically, the task is [query ranking](https://en.wikipedia.org/wiki/Ranking_(information_retrieval)) for images of individual whales given a query image against an image database, which is a key step in the full photo-identification process.
+**The goal of [this challenge](https://www.drivendata.org/competitions/96/beluga-whales/) is to help wildlife researchers accurately identify endangered Cook Inlet beluga whale individuals from photographic images.** Specifically, the task is [query ranking](https://en.wikipedia.org/wiki/Ranking_(information_retrieval)) for images of individual whales given a query image against an image database, which is a key step in the full photo-identification process.
 
 This was a code execution challenge, which means that participants packaged the files needed to perform inference and submitted them for containerized execution.  
 
